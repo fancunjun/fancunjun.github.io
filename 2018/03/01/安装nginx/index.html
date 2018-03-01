@@ -103,17 +103,14 @@
   <meta name="keywords" content="Hexo, NexT" />
 
 
-<meta name="description" content="1 nginx三个大方面的功能a: web服务   www, http .端口：80b:负载均衡（反向代理proxy）c web cache (web缓存) 2 ngin的优点：高并发占用资源少功能种类多支持epoll模型，使得ngint能够支持高并发ngint配合动态服务下apache有区别nginx可以对Ip限速，限制ip连接数 安装nginx准备：安装proc[root@s105 httpd">
 <meta property="og:type" content="article">
-<meta property="og:title" content="fancunjun">
+<meta property="og:title" content="安装nginx">
 <meta property="og:url" content="http://yoursite.com/2018/03/01/安装nginx/index.html">
 <meta property="og:site_name" content="fancunjun">
-<meta property="og:description" content="1 nginx三个大方面的功能a: web服务   www, http .端口：80b:负载均衡（反向代理proxy）c web cache (web缓存) 2 ngin的优点：高并发占用资源少功能种类多支持epoll模型，使得ngint能够支持高并发ngint配合动态服务下apache有区别nginx可以对Ip限速，限制ip连接数 安装nginx准备：安装proc[root@s105 httpd">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-01T02:54:17.539Z">
+<meta property="og:updated_time" content="2018-03-01T04:07:23.584Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fancunjun">
-<meta name="twitter:description" content="1 nginx三个大方面的功能a: web服务   www, http .端口：80b:负载均衡（反向代理proxy）c web cache (web缓存) 2 ngin的优点：高并发占用资源少功能种类多支持epoll模型，使得ngint能够支持高并发ngint配合动态服务下apache有区别nginx可以对Ip限速，限制ip连接数 安装nginx准备：安装proc[root@s105 httpd">
+<meta name="twitter:title" content="安装nginx">
 
 
 
@@ -129,7 +126,7 @@
     sidebar: "",
   };
 </script>
-  <title> | fancunjun</title>
+  <title>安装nginx | fancunjun</title>
   
 
 
@@ -287,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">安装nginx</h1>
         
 
         <div class="post-meta">
@@ -299,7 +296,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-01T10:54:17+08:00">2018-03-01</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-01T20:07:23+08:00">2018-03-01</time>
             
 
             
@@ -336,40 +333,7 @@
       
 
       
-        <p>1 nginx三个大方面的功能<br>a: web服务   www, http .端口：80<br>b:负载均衡（反向代理proxy）<br>c web cache (web缓存)</p>
-<p>2 ngin的优点：<br>高并发<br>占用资源少<br>功能种类多<br>支持epoll模型，使得ngint能够支持高并发<br>ngint配合动态服务下apache有区别<br>nginx可以对Ip限速，限制ip连接数</p>
-<p>安装nginx准备：<br>安装proc<br>[root@s105 httpd]# yum install proc proc-devel -y<br>Loaded plugins: fastestmirror, refresh-packagekit, security<br>Loading mirror speeds from cached hostfile</p>
-<ul>
-<li>base: mirrors.aliyun.com</li>
-<li>extras: mirrors.aliyun.com</li>
-<li>updates: mirrors.aliyun.com<br>base                                                                                                                    | 3.7 kB     00:00<br>extras                                                                                                                  | 3.4 kB     00:00<br>updates                                                                                                                 | 3.4 kB     00:00<br>Setting up Install Process<br>No package proc available.<br>No package proc-devel available.<br>Error: Nothing to do<br>安装openssl<br>[root@s105 httpd]# yum install openssl openssl-devel -y<br>下载nginx:<br>wget <a href="http://nginx.org/download/nginx-1.12.2.tar.gz" target="_blank" rel="noopener">http://nginx.org/download/nginx-1.12.2.tar.gz</a><br>创建用户：<br>[root@s105 nginx-1.12.2]# useradd -s /sbin/nologin -M nginx<br>配置nginx:<br>[root@s105 nginx-1.12.2]# ./configure –user=nginx –group=nginx –prefix=/application/httpd/nginx –with-http_stub_status_module –with-http_ssl_module<br>检查是否成功：<br>[root@s105 nginx-1.12.2]# echo $?<br>0<br>检查语法：<br>nginx: the configuration file /application/nginx-1.12.2/conf/nginx.conf syntax is ok<br>nginx: configuration file /application/nginx-1.12.2/conf/nginx.conf test is successful<br>[root@s105 nginx-1.12.2]# curl 192.168.148.105<br>&lt;!DOCTYPE html&gt;<br><html><br><head><br><title>Welcome to nginx!</title><br><style><br> body {<pre><code>width: 35em;
-margin: 0 auto;
-font-family: Tahoma, Verdana, Arial, sans-serif;
-</code></pre> }<br></style><br></head><br><body><br><h1>Welcome to nginx!</h1><p>If you see this page, the nginx web server is successfully installed and<br>working. Further configuration is required.</p>
-
-</body></html></li>
-</ul>
-<p>For online documentation and support please refer to<br><a href="http://nginx.org/" target="_blank" rel="noopener">nginx.org</a>.<br><br>Commercial support is available at<br><a href="http://nginx.com/" target="_blank" rel="noopener">nginx.com</a>.</p>
-
-<p></p><p><em>Thank you for using nginx.</em></p><br><br><p></p>
-<p>安装：<br>[root@s105 nginx-1.12.2]# make&amp;&amp;make install </p>
-<p>启动服务：<br>[root@s105 nginx-1.12.2]# /application/nginx-1.12.2/sbin/nginx  #&gt;&gt;后面不用带start 跟apache不一样<br>然后在浏览器中输入Ip地址。就会出现</p>
-<p>注意：提前创建好安装目录<br>查看端口：<br>[root@s105 conf]# netstat -lnput |grep nginx<br>tcp        0      0 0.0.0.0:80                  0.0.0.0:<em>                   LISTEN      11117/nginx<br>[root@s105 conf]# lsof -i:80<br>COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME<br>nginx   11117  root    6u  IPv4  28773      0t0  TCP </em>:http (LISTEN)<br>nginx   11118 nginx    6u  IPv4  28773      0t0  TCP *:http (LISTEN)</p>
-<p>排错：<br>ping 192.168.148.105 #&gt;&gt;检查物理机通不通<br>telnet 192.168.148.105到web服务通不通<br>服务器本地：curl 192.168.148.105 #检查web服务开没开</p>
-<p>配置一个站点：</p>
-<p>配置nginx第一个站点：<br>进入到ngin的文件目录地址：<br>[root@s105 html]# cd ~/tools/nginx-1.12.2/<br>[root@s105 nginx-1.12.2]# cd html/<br>[root@s105 html]# ls<br>50x.html  index.html<br>[root@s105 html]# vim index.html</p>
-<p>配置虚拟机：<br>修改nginx.conf文件：</p>
-<p>批量创建目录：<br>[root@s105 html]# mkdir {www,blog,bbs}<br>[root@s105 html]# ls<br>编写脚本循环写入文件内容：<br>第一次错误：<br>[root@s105 blog]# for n in www blog bbs ;do echo “$n.etiantian.org” &gt; /$n/index.html;done #这个地方不够细心，路径写错了，发现应该是在上一个目录下<br>-bash: /www/index.html: No such file or directory<br>-bash: /blog/index.html: No such file or directory<br>-bash: /bbs/index.html: No such file or directory<br>第二次错误：进入到上一路径、html下重新执行也不对，还是报没有文件<br>[root@s105 html]# for n in www blog bbs ;do echo “$n.etiantian.org” &gt; /$n/index.html;done<br>-bash: /www/index.html: No such file or directory<br>-bash: /blog/index.html: No such file or directory<br>-bash: /bbs/index.html: No such file or directory<br>第三次我就想实在不行到每个目录下创建得了：<br>[root@s105 bbs]# cd ../www;touch index.html<br>[root@s105 www]# cd ../blog;touch index.html<br>心想这一次应该好了吧，<br>第四次：<br>[root@s105 blog]# for n in www blog bbs ;do echo “$n.etiantian.org” &gt; /$n/index.html;done<br>-bash: /www/index.html: No such file or directory<br>-bash: /blog/index.html: No such file or directory<br>-bash: /bbs/index.html: No such file or directory<br>这个时候我已经要疯了，还是不行。<br>正好有个群友在线，果断请教，一眼看出来我路径不对</p>
-<p>看完这段话，我突然明白了，错误在什么地方了。<br>[root@s105 blog]# for n in www blog bbs ;do echo “$n.etiantian.org” &gt; /$n/index.html;done<br>/$n前面的/代表根路径，这样写就是执行一百年也不会成功呀，哎，一定要细心。把/去掉，这下肯定会成功了<br>第五次执行：<br>[root@s105 html]# for n in www blog bbs ;do echo “$n.etiantian.org” &gt;$n/index.html;done<br>没有报错，哈哈成功了。yeae!<br>查看结果：<br>[root@s105 html]# for n in www blog bbs ;do cat “$n.etiantian.org” &gt;$n/index.html;done<br>cat: <a href="http://www.etiantian.org" target="_blank" rel="noopener">www.etiantian.org</a>: No such file or directory<br>cat: blog.etiantian.org: No such file or directory<br>cat: bbs.etiantian.org: No such file or directory<br>什么？？？没有内容？？什么情况、这是什么情况？？？<br>[root@s105 html]# for n in www blog bbs ;do cat $n/index.html;done<br>由于对脚本不熟悉，以为这样写是对的。<br>[root@s105 html]# cd www/<br>[root@s105 www]# ls<br>index.html<br>[root@s105 www]# cat index.html<br>检查没有内容、直接崩溃了，没办法呀，接着查找原因：发现：<br>[root@s105 html]# for n in www blog bbs ;do cat “$n.etiantian.org” &gt;$n/index.html;done<br>尖号和$号爱着，果断空格再试验<br>第六次：<br>[root@s105 html]# for n in www blog bbs ;do echo  “$n.etiantian.org” &gt; $n/index.html;done<br>没有报错，检查：<br>[root@s105 html]# for n in www blog bbs ;do cat $n/index.html;done<br><a href="http://www.etiantian.org" target="_blank" rel="noopener">www.etiantian.org</a><br>blog.etiantian.org<br>bbs.etiantian.org<br>这次是真正成功了。一个简单的配置虚拟机，错误这么多，基础不牢靠不行啊，还要多多细心，多学习基础知识。</p>
-<p>添加状态信息，打开nginx的配置信息：添加如下内容：<br>[root@s105 ~]# vim /application/nginx/conf/nginx.conf<br>………………</p>
-<p>#statux(状态信息)<br> server {<br>        listen       80;<br>        server_name  status.etiantian.org;<br>        stub_status on;<br>        access_log  off;</p>
-<pre><code>}
-</code></pre><p>然后配置电脑宿主机的hosts文件，文件路径为：C:\Windows\System32\drivers\etc，添加如下内容：</p>
-<p>然后,检查语法，平滑重启：<br>[root@s105 ~]#  /application/nginx/sbin/nginx -t<br>nginx: the configuration file /application/nginx-1.12.2/conf/nginx.conf syntax is ok<br>nginx: configuration file /application/nginx-1.12.2/conf/nginx.conf test is successful<br>[root@s105 ~]#  /application/nginx/sbin/nginx -s reload</p>
-<p>#没有报错就是成功了</p>
-<p>新开网页地址验证：</p>
-<p>图中第一行开始是1，后经过同事访问本机ip测试得到2，说明成功监测的访问人数、</p>
-
+        
       
     </div>
 
@@ -396,8 +360,8 @@ font-family: Tahoma, Verdana, Arial, sans-serif;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/28/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/03/01/2018-02-22-安装nginx/" rel="next" title="安装nginx">
+                <i class="fa fa-chevron-left"></i> 安装nginx
               </a>
             
           </div>
@@ -405,6 +369,10 @@ font-family: Tahoma, Verdana, Arial, sans-serif;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/01/安装nginx-1/" rel="prev" title="安装nginx">
+                安装nginx <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -453,17 +421,8 @@ font-family: Tahoma, Verdana, Arial, sans-serif;
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -478,7 +437,7 @@ font-family: Tahoma, Verdana, Arial, sans-serif;
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -508,22 +467,6 @@ font-family: Tahoma, Verdana, Arial, sans-serif;
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Welcome to nginx!</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
