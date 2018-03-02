@@ -261,6 +261,148 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/02/2018-02-22-pyhon流程控制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fancunjun(大海)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fancunjun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/02/2018-02-22-pyhon流程控制/" itemprop="url">python流程控制及循环练习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-02T04:58:21Z">2018-03-02</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>流程控制</p>
+<p>if 条件 ：<br>   执行代码块<br>elif 条件：<br>     执行代码块<br>else:<br>     执行代码块</p>
+<p>例子代码一：</p>
+<p>#inp变量接收用户输入的内容，input与用户交互，python2.7系列中是: raw_input<br>inp = input (“&gt;&gt;&gt;”)<br>if inp == “1”:      #如果用户输入1 ，控制台输出 你好1<br>    print(“你好1”)<br>elif inp == “2”:    #如果用户输入2 ，控制台输出 你好2<br>    print(“你好2”)<br>elif inp == “3”:    #如果用户输入3 ，控制台输出 你好3<br>    print(“你好3”)<br>else :                #如果用户输入非1，2，3 ，控制台输出wrong<br>    print(“wrong”)</p>
+<p>例子代码二：</p>
+<h1 id="循环控制"><a href="#循环控制" class="headerlink" title="循环控制"></a>循环控制</h1><p>import time # 导入time 包<br>while n1 = True<br>  print (“1”)<br>  time.sleep(1)  #时间打印间隔时间为1秒<br>  n1 = Flase     # 重新给n1赋值，当系统读到n1 = Flase时，流程结束，走到print(“end”)<br>print(“end”)    </p>
+<p>例子代码二：<br>import time    #导入时间包<br>i = 1          # 给i 赋值为1<br>time.sleep(1)  #等待时间为  1 秒<br>flag = True    # 给flag 赋值为 True<br>while flag:    # 当为true时<br>    print(“你好”)  # 在控制台输出 你好<br>    if i == 10:  # 如果i 的值等于 10时<br>        flag = False   # 重新给flag赋值为 False<br>    i = i + 1  # 给i 赋值为 i + 1<br>print(“OVER”)  #当个以上流程结束时over，在控制台输出</p>
+<p>#输出除7以外的1-10的数值</p>
+<p>#输出1-10，当数值为7时，跳过这个循环，继续输出以下循环数值<br>实例代码如下：<br>i = 1<br>while True:<br>    if i == 7:<br>        i = i + 1<br>        continue;<br>    print(i)<br>    if i == 10:<br>        break;<br>    i = i + 1</p>
+<p>#输入1 -100和的数值</p>
+<p>#赋值变量i = 1,sum =0,第一个循环sum =0 + 1 ,执行i = i + 1 ,这时候i =2,再执行sum =sum +i (sum =1 ,而i=2,).</p>
+<p>#最终sum = 1+ 2 ,如此循环，当i =100时，执行 break,中断整个循环，并执行print(sum)<br>实例代码如下：<br>i = 1<br>sum = 0<br>while True:<br>    sum = sum + i<br>    if i == 100:<br>        break;<br>    i = i + 1<br>print(sum)</p>
+<p>#输出100以内的奇数</p>
+<p>#要输出100以内的奇数，就得先明白什么时奇数，在数学中，一个数除以2 ，余数为1的数，就为奇数。</p>
+<p>#输出1-100的数值，当遇到是奇数时就输入，不是奇数就不输出<br>实例代码如下：<br>i = 1 #给i赋值为1<br>while  i &lt; 101:<br>    temp = i % 2<br>    if temp ==1:<br>        print(i)<br>    else:<br>        pass<br>    i +=1<br>print(“执行结束”)</p>
+<p>#输出100以内的偶数<br>实例代码如下：<br>    i = 1 #给i赋值为1<br>while  i &lt; 101:<br>    temp = i % 2<br>    if temp ==0:<br>        print(i)<br>    else:<br>        pass<br>    i +=1<br>print(“执行结束”)</p>
+<p>#输出1-2+3-4….99的和</p>
+<p>#先输出1-99的和，如果是偶数sum - i ,如果是奇数，sum +i ,最后循环结束，输出sum的数值<br>i = 1 #给i赋值为1<br>sum =0<br>while  i &lt; 100:<br>    temp = i % 2<br>    if temp ==0:<br>        sum = sum - i<br>    else:<br>        temp == 1<br>        sum = sum + i<br>    i +=1<br>print(sum)</p>
+<p>#用户连续三次输入用户密码机会<br>i = 1<br>while i &lt; 4 :<br>    user = input(“username:”)<br>    pwd = input(“passwd:”)<br>    if user == “fancunjun” and pwd == “123”:<br>        print(“yes”)<br>        break;<br>    else:<br>        print(“try!”)<br>    i +=1<br>print(“请重新输入”)</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/01/2018-02-22-安装nginx/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -577,7 +719,7 @@ font-family: Tahoma, Verdana, Arial, sans-serif;
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
