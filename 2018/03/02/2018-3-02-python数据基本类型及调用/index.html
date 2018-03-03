@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="fancunjun">
 <meta property="og:description" content="基本数据类型：int创建方式1：int = 123 根据int类创建一个对象 这一步会自动调用int = int(123)int = int(123)  根据int类创建一个对象创建方式2：n1 = 123n2 = n1 # n1 和n2 共用一块内在对象的内存地址 id(对象或者变量的名) #查看对象的类，以及对象所具备的方法 通过type查看   temp = “alex”b = dir(te">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-03T05:59:44.709Z">
+<meta property="og:updated_time" content="2018-03-03T07:05:58.344Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python数据基本类型及应用">
 <meta name="twitter:description" content="基本数据类型：int创建方式1：int = 123 根据int类创建一个对象 这一步会自动调用int = int(123)int = int(123)  根据int类创建一个对象创建方式2：n1 = 123n2 = n1 # n1 和n2 共用一块内在对象的内存地址 id(对象或者变量的名) #查看对象的类，以及对象所具备的方法 通过type查看   temp = “alex”b = dir(te">
@@ -364,20 +364,20 @@
 <p>#查看对象的类，以及对象所具备的方法<br> 通过type查看<br>   temp = “alex”<br>b = dir(temp)<br>print(b)</p>
 <p>#help<br>temp = “alex”<br>help(type(temp))</p>
 <p>#连接字符串<br>list = [“fan”,”cun”]<br>s = “”.join(list) #””里是什么就通过什么符号连接两个字符<br>print(s)</p>
-<p>###################################################################<br>“””<br>        S.center(width[, fillchar]) -&gt; str</p>
+<p>####################################################<br>“””<br>        S.center(width[, fillchar]) -&gt; str</p>
 <pre><code>Return S centered in a string of length width. Padding is
 done using the specified fill character (default is a space)
 &quot;&quot;&quot;
 </code></pre><p>实例代码如下：<br>temp = “alex”<br>s  = temp.capitalize() #把变量的第一个字母变成大写，其余的全是小写<br>print(s)</p>
-<p>###################################################################<br>把变量居中，两边默认空格隔开，也可以输入指定符号代替空格<br>temp = “alex”<br>s  = temp.center(10,”-“)# 10是指定总长度，把alax居中，其他6个长度用指定符号代替<br>print(s)<br>效果：—alex—</p>
-<p>###################################################################<br> “””<br>    S.count(sub[, start[, end]]) -&gt; int</p>
+<p>####################################################<br>把变量居中，两边默认空格隔开，也可以输入指定符号代替空格<br>temp = “alex”<br>s  = temp.center(10,”-“)# 10是指定总长度，把alax居中，其他6个长度用指定符号代替<br>print(s)<br>效果：—alex—</p>
+<p>####################################################<br> “””<br>    S.count(sub[, start[, end]]) -&gt; int</p>
 <pre><code>Return the number of non-overlapping occurrences of substring sub in
 string S[start:end].  Optional arguments start and end are
 interpreted as in slice notation.
 返回子字符串sub中不重叠的次数
 字符串S [开始：结束]。 可选参数的开始和结束是解释为切片符号。
 </code></pre><p>“””<br>实例代码如下：<br>temp = “alex”<br>s = temp.count(“a”)<br>print(s)<br>效果：1</p>
-<p>###################################################################<br> “””<br>        S.endswith(suffix[, start[, end]]) -&gt; bool</p>
+<p>####################################################<br> “””<br>        S.endswith(suffix[, start[, end]]) -&gt; bool</p>
 <pre><code>Return True if S ends with the specified suffix, False otherwise.
 With optional start, test S beginning at that position.
 With optional end, stop comparing S at that position.
