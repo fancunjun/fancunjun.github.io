@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+<meta name="description" content="流程控制if 条件 ：   执行代码块elif 条件：     执行代码块else:     执行代码块 例子代码一： #inp变量接收用户输入的内容，input与用户交互，python2.7系列中是: raw_inputinp = input (“&amp;gt;&amp;gt;&amp;gt;”)if inp == “1”:      #如果用户输入1 ，控制台输出 你好1    print(“你好1”)elif i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python流程控制和循环练习">
+<meta property="og:url" content="http://yoursite.com/2018/03/01/2018-02-28-python流程控制及循环练习/index.html">
+<meta property="og:site_name" content="fancunjun">
+<meta property="og:description" content="流程控制if 条件 ：   执行代码块elif 条件：     执行代码块else:     执行代码块 例子代码一： #inp变量接收用户输入的内容，input与用户交互，python2.7系列中是: raw_inputinp = input (“&amp;gt;&amp;gt;&amp;gt;”)if inp == “1”:      #如果用户输入1 ，控制台输出 你好1    print(“你好1”)elif i">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-02T05:03:41.051Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python流程控制和循环练习">
+<meta name="twitter:description" content="流程控制if 条件 ：   执行代码块elif 条件：     执行代码块else:     执行代码块 例子代码一： #inp变量接收用户输入的内容，input与用户交互，python2.7系列中是: raw_inputinp = input (“&amp;gt;&amp;gt;&amp;gt;”)if inp == “1”:      #如果用户输入1 ，控制台输出 你好1    print(“你好1”)elif i">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/01/2018-02-28-python流程控制及循环练习/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>python流程控制和循环练习 | fancunjun</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">fancunjun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">a blog that recording my process</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/01/2018-02-28-python流程控制及循环练习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fancunjun(大海)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fancunjun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python流程控制和循环练习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-01T12:34:59+08:00">2018-03-01</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><p>if 条件 ：<br>   执行代码块<br>elif 条件：<br>     执行代码块<br>else:<br>     执行代码块</p>
+<p>例子代码一：</p>
+<p>#inp变量接收用户输入的内容，input与用户交互，python2.7系列中是: raw_input<br>inp = input (“&gt;&gt;&gt;”)<br>if inp == “1”:      #如果用户输入1 ，控制台输出 你好1<br>    print(“你好1”)<br>elif inp == “2”:    #如果用户输入2 ，控制台输出 你好2<br>    print(“你好2”)<br>elif inp == “3”:    #如果用户输入3 ，控制台输出 你好3<br>    print(“你好3”)<br>else :                #如果用户输入非1，2，3 ，控制台输出wrong<br>    print(“wrong”)</p>
+<p>例子代码二：</p>
+<h1 id="循环控制"><a href="#循环控制" class="headerlink" title="循环控制"></a>循环控制</h1><p>import time # 导入time 包<br>while n1 = True<br>  print (“1”)<br>  time.sleep(1)  #时间打印间隔时间为1秒<br>  n1 = Flase     # 重新给n1赋值，当系统读到n1 = Flase时，流程结束，走到print(“end”)<br>print(“end”)    </p>
+<p>例子代码二：<br>import time    #导入时间包<br>i = 1          # 给i 赋值为1<br>time.sleep(1)  #等待时间为  1 秒<br>flag = True    # 给flag 赋值为 True<br>while flag:    # 当为true时<br>    print(“你好”)  # 在控制台输出 你好<br>    if i == 10:  # 如果i 的值等于 10时<br>        flag = False   # 重新给flag赋值为 False<br>    i = i + 1  # 给i 赋值为 i + 1<br>print(“OVER”)  #当个以上流程结束时over，在控制台输出</p>
+<p>#输出除7以外的1-10的数值</p>
+<p>#输出1-10，当数值为7时，跳过这个循环，继续输出以下循环数值<br>实例代码如下：<br>i = 1<br>while True:<br>    if i == 7:<br>        i = i + 1<br>        continue;<br>    print(i)<br>    if i == 10:<br>        break;<br>    i = i + 1</p>
+<p>#输入1 -100和的数值</p>
+<p>#赋值变量i = 1,sum =0,第一个循环sum =0 + 1 ,执行i = i + 1 ,这时候i =2,再执行sum =sum +i (sum =1 ,而i=2,).</p>
+<p>#最终sum = 1+ 2 ,如此循环，当i =100时，执行 break,中断整个循环，并执行print(sum)<br>实例代码如下：<br>i = 1<br>sum = 0<br>while True:<br>    sum = sum + i<br>    if i == 100:<br>        break;<br>    i = i + 1<br>print(sum)</p>
+<p>#输出100以内的奇数</p>
+<p>#要输出100以内的奇数，就得先明白什么时奇数，在数学中，一个数除以2 ，余数为1的数，就为奇数。</p>
+<p>#输出1-100的数值，当遇到是奇数时就输入，不是奇数就不输出<br>实例代码如下：<br>i = 1 #给i赋值为1<br>while  i &lt; 101:<br>    temp = i % 2<br>    if temp ==1:<br>        print(i)<br>    else:<br>        pass<br>    i +=1<br>print(“执行结束”)</p>
+<p>#输出100以内的偶数<br>实例代码如下：<br>    i = 1 #给i赋值为1<br>while  i &lt; 101:<br>    temp = i % 2<br>    if temp ==0:<br>        print(i)<br>    else:<br>        pass<br>    i +=1<br>print(“执行结束”)</p>
+<p>#输出1-2+3-4….99的和</p>
+<p>#先输出1-99的和，如果是偶数sum - i ,如果是奇数，sum +i ,最后循环结束，输出sum的数值<br>i = 1 #给i赋值为1<br>sum =0<br>while  i &lt; 100:<br>    temp = i % 2<br>    if temp ==0:<br>        sum = sum - i<br>    else:<br>        temp == 1<br>        sum = sum + i<br>    i +=1<br>print(sum)</p>
+<p>#用户连续三次输入用户密码机会<br>i = 1<br>while i &lt; 4 :<br>    user = input(“username:”)<br>    pwd = input(“passwd:”)<br>    if user == “fancunjun” and pwd == “123”:<br>        print(“yes”)<br>        break;<br>    else:<br>        print(“try!”)<br>    i +=1<br>print(“请重新输入”)</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/01/2018-02-22-安装nginx/" rel="next" title="安装nginx">
+                <i class="fa fa-chevron-left"></i> 安装nginx
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/02/2018-3-02-python数据基本类型及调用/" rel="prev" title="python数据基本类型及应用">
+                python数据基本类型及应用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">fancunjun(大海)</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/fancunjun" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#流程控制"><span class="nav-number">1.</span> <span class="nav-text">流程控制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#循环控制"><span class="nav-number">2.</span> <span class="nav-text">循环控制</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fancunjun(大海)</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
