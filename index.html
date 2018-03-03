@@ -361,8 +361,15 @@
       
         
           
-            
           
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/02/2018-02-28-python流程控制及循环练习-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -484,8 +491,15 @@
       
         
           
-            
           
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/02/2018-02-28-python流程控制及循环练习-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -607,48 +621,16 @@
       
         
           
-            <p>基本数据类型：<br>int<br>创建方式1：<br>int = 123 根据int类创建一个对象 这一步会自动调用int = int(123)<br>int = int(123)  根据int类创建一个对象<br>创建方式2：<br>n1 = 123<br>n2 = n1 # n1 和n2 共用一块内在<br>对象的内存地址 id(对象或者变量的名)</p>
-<p>#查看对象的类，以及对象所具备的方法<br> 通过type查看<br>   temp = “alex”<br>b = dir(temp)<br>print(b)</p>
-<p>#help<br>temp = “alex”<br>help(type(temp))</p>
-<p>#连接字符串<br>list = [“fan”,”cun”]<br>s = “”.join(list) #””里是什么就通过什么符号连接两个字符<br>print(s)</p>
-<p>###################################################################<br>“””<br>        S.center(width[, fillchar]) -&gt; str</p>
-<pre><code>Return S centered in a string of length width. Padding is
-done using the specified fill character (default is a space)
-&quot;&quot;&quot;
-</code></pre><p>实例代码如下：<br>temp = “alex”<br>s  = temp.capitalize() #把变量的第一个字母变成大写，其余的全是小写<br>print(s)</p>
-<p>###################################################################<br>把变量居中，两边默认空格隔开，也可以输入指定符号代替空格<br>temp = “alex”<br>s  = temp.center(10,”-“)# 10是指定总长度，把alax居中，其他6个长度用指定符号代替<br>print(s)<br>效果：—alex—</p>
-<p>###################################################################<br> “””<br>    S.count(sub[, start[, end]]) -&gt; int</p>
-<pre><code>Return the number of non-overlapping occurrences of substring sub in
-string S[start:end].  Optional arguments start and end are
-interpreted as in slice notation.
-返回子字符串sub中不重叠的次数
-字符串S [开始：结束]。 可选参数的开始和结束是解释为切片符号。
-</code></pre><p>“””<br>实例代码如下：<br>temp = “alex”<br>s = temp.count(“a”)<br>print(s)<br>效果：1</p>
-<p>###################################################################<br> “””<br>        S.endswith(suffix[, start[, end]]) -&gt; bool</p>
-<pre><code>Return True if S ends with the specified suffix, False otherwise.
-With optional start, test S beginning at that position.
-With optional end, stop comparing S at that position.
-suffix can also be a tuple of strings to try.
-如果S以指定的后缀结束，则返回True，否则返回False。
-在可选启动的情况下，从该位置开始测试S.
-选择结束时，停止在该位置比较S.
-后缀也可以是字符串的元组来尝试。
-</code></pre><p> “””<br> 实例代码如下：<br>temp = “alex”<br>s = temp.endswith(“e”)<br>print(s)<br>效果：Falsey</p>
-<p>####################################################<br>  “””<br>        S.find(sub[, start[, end]]) -&gt; int</p>
-<pre><code>Return the lowest index in S where substring sub is found,
-such that sub is contained within S[start:end].  Optional
-arguments start and end are interpreted as in slice notation.
-
-Return -1 on failure.
-  返回S中找到substring sub的最低索引，
- 使得sub包含在S [start：end]中。 可选的
- 参数开始和结束被解释为切片符号。
-
- 失败时返回-1。
-&quot;&quot;&quot;
-</code></pre><p>实例代码如下：<br>temp = “alex”<br>s = temp.find(“e”)<br>print(s)<br>效果:<br>2</p>
-
-          
+          基本数据类型：int创建方式1：int = 123 根据int类创建一个对象 这一步会自动调用int = int(123)int = int(123)  根据int类创建一个对象创建方式2：n1 = 123n2 = n1 # n1 和n2 共用一块内在对象的内存地址 id(对象或者变量的名)
+#查看
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/02/2018-3-02-python数据基本类型及调用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -770,26 +752,17 @@ Return -1 on failure.
       
         
           
-            <h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><p>if 条件 ：<br>   执行代码块<br>elif 条件：<br>     执行代码块<br>else:<br>     执行代码块</p>
-<p>例子代码一：</p>
-<p>#inp变量接收用户输入的内容，input与用户交互，python2.7系列中是: raw_input<br>inp = input (“&gt;&gt;&gt;”)<br>if inp == “1”:      #如果用户输入1 ，控制台输出 你好1<br>    print(“你好1”)<br>elif inp == “2”:    #如果用户输入2 ，控制台输出 你好2<br>    print(“你好2”)<br>elif inp == “3”:    #如果用户输入3 ，控制台输出 你好3<br>    print(“你好3”)<br>else :                #如果用户输入非1，2，3 ，控制台输出wrong<br>    print(“wrong”)</p>
-<p>例子代码二：</p>
-<h1 id="循环控制"><a href="#循环控制" class="headerlink" title="循环控制"></a>循环控制</h1><p>import time # 导入time 包<br>while n1 = True<br>  print (“1”)<br>  time.sleep(1)  #时间打印间隔时间为1秒<br>  n1 = Flase     # 重新给n1赋值，当系统读到n1 = Flase时，流程结束，走到print(“end”)<br>print(“end”)    </p>
-<p>例子代码二：<br>import time    #导入时间包<br>i = 1          # 给i 赋值为1<br>time.sleep(1)  #等待时间为  1 秒<br>flag = True    # 给flag 赋值为 True<br>while flag:    # 当为true时<br>    print(“你好”)  # 在控制台输出 你好<br>    if i == 10:  # 如果i 的值等于 10时<br>        flag = False   # 重新给flag赋值为 False<br>    i = i + 1  # 给i 赋值为 i + 1<br>print(“OVER”)  #当个以上流程结束时over，在控制台输出</p>
-<p>#输出除7以外的1-10的数值</p>
-<p>#输出1-10，当数值为7时，跳过这个循环，继续输出以下循环数值<br>实例代码如下：<br>i = 1<br>while True:<br>    if i == 7:<br>        i = i + 1<br>        continue;<br>    print(i)<br>    if i == 10:<br>        break;<br>    i = i + 1</p>
-<p>#输入1 -100和的数值</p>
-<p>#赋值变量i = 1,sum =0,第一个循环sum =0 + 1 ,执行i = i + 1 ,这时候i =2,再执行sum =sum +i (sum =1 ,而i=2,).</p>
-<p>#最终sum = 1+ 2 ,如此循环，当i =100时，执行 break,中断整个循环，并执行print(sum)<br>实例代码如下：<br>i = 1<br>sum = 0<br>while True:<br>    sum = sum + i<br>    if i == 100:<br>        break;<br>    i = i + 1<br>print(sum)</p>
-<p>#输出100以内的奇数</p>
-<p>#要输出100以内的奇数，就得先明白什么时奇数，在数学中，一个数除以2 ，余数为1的数，就为奇数。</p>
-<p>#输出1-100的数值，当遇到是奇数时就输入，不是奇数就不输出<br>实例代码如下：<br>i = 1 #给i赋值为1<br>while  i &lt; 101:<br>    temp = i % 2<br>    if temp ==1:<br>        print(i)<br>    else:<br>        pass<br>    i +=1<br>print(“执行结束”)</p>
-<p>#输出100以内的偶数<br>实例代码如下：<br>    i = 1 #给i赋值为1<br>while  i &lt; 101:<br>    temp = i % 2<br>    if temp ==0:<br>        print(i)<br>    else:<br>        pass<br>    i +=1<br>print(“执行结束”)</p>
-<p>#输出1-2+3-4….99的和</p>
-<p>#先输出1-99的和，如果是偶数sum - i ,如果是奇数，sum +i ,最后循环结束，输出sum的数值<br>i = 1 #给i赋值为1<br>sum =0<br>while  i &lt; 100:<br>    temp = i % 2<br>    if temp ==0:<br>        sum = sum - i<br>    else:<br>        temp == 1<br>        sum = sum + i<br>    i +=1<br>print(sum)</p>
-<p>#用户连续三次输入用户密码机会<br>i = 1<br>while i &lt; 4 :<br>    user = input(“username:”)<br>    pwd = input(“passwd:”)<br>    if user == “fancunjun” and pwd == “123”:<br>        print(“yes”)<br>        break;<br>    else:<br>        print(“try!”)<br>    i +=1<br>print(“请重新输入”)</p>
-
-          
+          流程控制if 条件 ：   执行代码块elif 条件：     执行代码块else:     执行代码块
+例子代码一：
+#inp变量接收用户输入的内容，input与用户交互，python2.7系列中是: raw_inputinp = input (“&gt;&gt;&gt;”)if inp == “
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/01/2018-02-28-python流程控制及循环练习/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -911,41 +884,16 @@ Return -1 on failure.
       
         
           
-            <p> nginx三个大方面的功能<br>a: web服务   www, http .端口：80<br>b:负载均衡（反向代理proxy）<br>c web cache (web缓存)</p>
-<p>2 ngin的优点：<br>高并发<br>占用资源少<br>功能种类多<br>支持epoll模型，使得ngint能够支持高并发<br>ngint配合动态服务下apache有区别<br>nginx可以对Ip限速，限制ip连接数</p>
-<p>安装nginx准备：<br>安装proc<br>[root@s105 httpd]# yum install proc proc-devel -y<br>Loaded plugins: fastestmirror, refresh-packagekit, security<br>Loading mirror speeds from cached hostfile</p>
-<ul>
-<li>base: mirrors.aliyun.com</li>
-<li>extras: mirrors.aliyun.com</li>
-<li>updates: mirrors.aliyun.com<br>base                                                                                                                    | 3.7 kB     00:00<br>extras                                                                                                                  | 3.4 kB     00:00<br>updates                                                                                                                 | 3.4 kB     00:00<br>Setting up Install Process<br>No package proc available.<br>No package proc-devel available.<br>Error: Nothing to do<br>安装openssl<br>[root@s105 httpd]# yum install openssl openssl-devel -y<br>下载nginx:<br>wget <a href="http://nginx.org/download/nginx-1.12.2.tar.gz" target="_blank" rel="noopener">http://nginx.org/download/nginx-1.12.2.tar.gz</a><br>创建用户：<br>[root@s105 nginx-1.12.2]# useradd -s /sbin/nologin -M nginx<br>配置nginx:<br>[root@s105 nginx-1.12.2]# ./configure –user=nginx –group=nginx –prefix=/application/httpd/nginx –with-http_stub_status_module –with-http_ssl_module<br>检查是否成功：<br>[root@s105 nginx-1.12.2]# echo $?<br>0<br>检查语法：<br>nginx: the configuration file /application/nginx-1.12.2/conf/nginx.conf syntax is ok<br>nginx: configuration file /application/nginx-1.12.2/conf/nginx.conf test is successful<br>[root@s105 nginx-1.12.2]# curl 192.168.148.105<br>&lt;!DOCTYPE html&gt;<br><html><br><head><br><title>Welcome to nginx!</title><br><style><br> body {<pre><code>width: 35em;
-margin: 0 auto;
-font-family: Tahoma, Verdana, Arial, sans-serif;
-</code></pre> }<br></style><br></head><br><body><br><h1>Welcome to nginx!</h1><p>If you see this page, the nginx web server is successfully installed and<br>working. Further configuration is required.</p>
-
-</body></html></li>
-</ul>
-<p>For online documentation and support please refer to<br><a href="http://nginx.org/" target="_blank" rel="noopener">nginx.org</a>.<br><br>Commercial support is available at<br><a href="http://nginx.com/" target="_blank" rel="noopener">nginx.com</a>.</p>
-
-<p></p><p><em>Thank you for using nginx.</em></p><br><br><p></p>
-<p>安装：<br>[root@s105 nginx-1.12.2]# make&amp;&amp;make install </p>
-<p>启动服务：<br>[root@s105 nginx-1.12.2]# /application/nginx-1.12.2/sbin/nginx  #&gt;&gt;后面不用带start 跟apache不一样<br>然后在浏览器中输入Ip地址。就会出现</p>
-<p>注意：提前创建好安装目录<br>查看端口：<br>[root@s105 conf]# netstat -lnput |grep nginx<br>tcp        0      0 0.0.0.0:80                  0.0.0.0:<em>                   LISTEN      11117/nginx<br>[root@s105 conf]# lsof -i:80<br>COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME<br>nginx   11117  root    6u  IPv4  28773      0t0  TCP </em>:http (LISTEN)<br>nginx   11118 nginx    6u  IPv4  28773      0t0  TCP *:http (LISTEN)</p>
-<p>排错：<br>ping 192.168.148.105 #&gt;&gt;检查物理机通不通<br>telnet 192.168.148.105到web服务通不通<br>服务器本地：curl 192.168.148.105 #检查web服务开没开</p>
-<p>配置一个站点：</p>
-<p>配置nginx第一个站点：<br>进入到ngin的文件目录地址：<br>[root@s105 html]# cd ~/tools/nginx-1.12.2/<br>[root@s105 nginx-1.12.2]# cd html/<br>[root@s105 html]# ls<br>50x.html  index.html<br>[root@s105 html]# vim index.html</p>
-<p>配置虚拟机：<br>修改nginx.conf文件：</p>
-<p>批量创建目录：<br>[root@s105 html]# mkdir {www,blog,bbs}<br>[root@s105 html]# ls<br>编写脚本循环写入文件内容：<br>第一次错误：<br>[root@s105 blog]# for n in www blog bbs ;do echo “$n.etiantian.org” &gt; /$n/index.html;done #这个地方不够细心，路径写错了，发现应该是在上一个目录下<br>-bash: /www/index.html: No such file or directory<br>-bash: /blog/index.html: No such file or directory<br>-bash: /bbs/index.html: No such file or directory<br>第二次错误：进入到上一路径、html下重新执行也不对，还是报没有文件<br>[root@s105 html]# for n in www blog bbs ;do echo “$n.etiantian.org” &gt; /$n/index.html;done<br>-bash: /www/index.html: No such file or directory<br>-bash: /blog/index.html: No such file or directory<br>-bash: /bbs/index.html: No such file or directory<br>第三次我就想实在不行到每个目录下创建得了：<br>[root@s105 bbs]# cd ../www;touch index.html<br>[root@s105 www]# cd ../blog;touch index.html<br>心想这一次应该好了吧，<br>第四次：<br>[root@s105 blog]# for n in www blog bbs ;do echo “$n.etiantian.org” &gt; /$n/index.html;done<br>-bash: /www/index.html: No such file or directory<br>-bash: /blog/index.html: No such file or directory<br>-bash: /bbs/index.html: No such file or directory<br>这个时候我已经要疯了，还是不行。<br>正好有个群友在线，果断请教，一眼看出来我路径不对</p>
-<p>看完这段话，我突然明白了，错误在什么地方了。<br>[root@s105 blog]# for n in www blog bbs ;do echo “$n.etiantian.org” &gt; /$n/index.html;done<br>/$n前面的/代表根路径，这样写就是执行一百年也不会成功呀，哎，一定要细心。把/去掉，这下肯定会成功了<br>第五次执行：<br>[root@s105 html]# for n in www blog bbs ;do echo “$n.etiantian.org” &gt;$n/index.html;done<br>没有报错，哈哈成功了。yeae!<br>查看结果：<br>[root@s105 html]# for n in www blog bbs ;do cat “$n.etiantian.org” &gt;$n/index.html;done<br>cat: <a href="http://www.etiantian.org" target="_blank" rel="noopener">www.etiantian.org</a>: No such file or directory<br>cat: blog.etiantian.org: No such file or directory<br>cat: bbs.etiantian.org: No such file or directory<br>什么？？？没有内容？？什么情况、这是什么情况？？？<br>[root@s105 html]# for n in www blog bbs ;do cat $n/index.html;done<br>由于对脚本不熟悉，以为这样写是对的。<br>[root@s105 html]# cd www/<br>[root@s105 www]# ls<br>index.html<br>[root@s105 www]# cat index.html<br>检查没有内容、直接崩溃了，没办法呀，接着查找原因：发现：<br>[root@s105 html]# for n in www blog bbs ;do cat “$n.etiantian.org” &gt;$n/index.html;done<br>尖号和$号爱着，果断空格再试验<br>第六次：<br>[root@s105 html]# for n in www blog bbs ;do echo  “$n.etiantian.org” &gt; $n/index.html;done<br>没有报错，检查：<br>[root@s105 html]# for n in www blog bbs ;do cat $n/index.html;done<br><a href="http://www.etiantian.org" target="_blank" rel="noopener">www.etiantian.org</a><br>blog.etiantian.org<br>bbs.etiantian.org<br>这次是真正成功了。一个简单的配置虚拟机，错误这么多，基础不牢靠不行啊，还要多多细心，多学习基础知识。</p>
-<p>添加状态信息，打开nginx的配置信息：添加如下内容：<br>[root@s105 ~]# vim /application/nginx/conf/nginx.conf<br>………………</p>
-<p>#statux(状态信息)<br> server {<br>        listen       80;<br>        server_name  status.etiantian.org;<br>        stub_status on;<br>        access_log  off;</p>
-<pre><code>}
-</code></pre><p>然后配置电脑宿主机的hosts文件，文件路径为：C:\Windows\System32\drivers\etc，添加如下内容：</p>
-<p>然后,检查语法，平滑重启：<br>[root@s105 ~]#  /application/nginx/sbin/nginx -t<br>nginx: the configuration file /application/nginx-1.12.2/conf/nginx.conf syntax is ok<br>nginx: configuration file /application/nginx-1.12.2/conf/nginx.conf test is successful<br>[root@s105 ~]#  /application/nginx/sbin/nginx -s reload</p>
-<p>#没有报错就是成功了</p>
-<p>新开网页地址验证：</p>
-<p>图中第一行开始是1，后经过同事访问本机ip测试得到2，说明成功监测的访问人数、</p>
-
-          
+           nginx三个大方面的功能a: web服务   www, http .端口：80b:负载均衡（反向代理proxy）c web cache (web缓存)
+2 ngin的优点：高并发占用资源少功能种类多支持epoll模型，使得ngint能够支持高并发ngint配合动态服务下apache有区别ngin
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/01/2018-02-22-安装nginx/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1067,17 +1015,15 @@ font-family: Tahoma, Verdana, Arial, sans-serif;
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/28/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
