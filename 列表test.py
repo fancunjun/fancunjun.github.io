@@ -1,9 +1,28 @@
 #创建朋友名字列表
-name = ["wangtianlai","wangxiaomeng","wangyao"]
-print(name[0])
-print(name[1])
-print(name[2])
+# name = ["wangtianlai","wangxiaomeng","wangyao"]
+# print(name[0])
+# print(name[1])
+# print(name[2])
 
 #为每个朋友送上祝福
-print("how are you" + "," + name[0] + "!" )
+# print("how are you" + "," + name[0] + "!" )
 
+#动手试一试
+#创建嘉宾名单，至少3个，邀请他们来吃晚饭
+Guests = ["liuyifei","fanbingbing","zhangbiyi"]
+print(Guests)
+print("诚意邀请",Guests[0],Guests[1],Guests[2],"来参加周五晚上的宴会！")
+#有一个人有事无法参加，修改列表，指出那一位朋友无法参加晚会
+#将不能参加的朋友名字替换成新邀请的朋友名字
+#再次打印，向每位朋友发出邀请
+#
+#找了一个更大的桌子
+#在一个新朋友添加到名单开头
+#在一个新朋友添加到名单开中间
+#在一个新朋友添加到名单开结尾
+#重新打印名单
+
+#只能宴请两位朋友了，
+#删除名单名字，每删除一次，向朋友说明情况，
+#向剩余的两位朋友发送消息依然可以在邀请之列
+#删除名单，让名单变成空的，打印列表
