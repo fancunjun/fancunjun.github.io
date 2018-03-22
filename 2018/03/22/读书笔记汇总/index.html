@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+<meta name="description" content="今天的笔记全是一些看书做的练习，看起来会比较乱，各位看官海涵！ 第一部分：1.小编的几个朋友好久不见，小编主动给他们发送了一条问候语1$ name = [&quot;wangtianlai&quot;,&quot;wangxiaomeng&quot;,&quot;wangyao&quot;] 为每个朋友送上祝福123$ print(&quot;how are you&quot; + &quot;,&quot; + name[0] + &quot;!&quot; )$ print(&quot;how are you&quot; + &quot;,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读书笔记汇总">
+<meta property="og:url" content="http://yoursite.com/2018/03/22/读书笔记汇总/index.html">
+<meta property="og:site_name" content="一个小白的python之路">
+<meta property="og:description" content="今天的笔记全是一些看书做的练习，看起来会比较乱，各位看官海涵！ 第一部分：1.小编的几个朋友好久不见，小编主动给他们发送了一条问候语1$ name = [&quot;wangtianlai&quot;,&quot;wangxiaomeng&quot;,&quot;wangyao&quot;] 为每个朋友送上祝福123$ print(&quot;how are you&quot; + &quot;,&quot; + name[0] + &quot;!&quot; )$ print(&quot;how are you&quot; + &quot;,">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/肚皮.jpg">
+<meta property="og:updated_time" content="2018-03-22T15:13:43.294Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="读书笔记汇总">
+<meta name="twitter:description" content="今天的笔记全是一些看书做的练习，看起来会比较乱，各位看官海涵！ 第一部分：1.小编的几个朋友好久不见，小编主动给他们发送了一条问候语1$ name = [&quot;wangtianlai&quot;,&quot;wangxiaomeng&quot;,&quot;wangyao&quot;] 为每个朋友送上祝福123$ print(&quot;how are you&quot; + &quot;,&quot; + name[0] + &quot;!&quot; )$ print(&quot;how are you&quot; + &quot;,">
+<meta name="twitter:image" content="http://yoursite.com/images/肚皮.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/22/读书笔记汇总/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>读书笔记汇总 | 一个小白的python之路</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一个小白的python之路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">勤学如春起之苗，不见其增，日有所长；辍学如磨刀之石，不见其损，日有所亏。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/22/读书笔记汇总/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="望穿秋水">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一个小白的python之路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">读书笔记汇总</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-22T08:00:00+08:00">2018-03-22</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天的笔记全是一些看书做的练习，看起来会比较乱，各位看官海涵！</p>
+<p>第一部分：<br>1.小编的几个朋友好久不见，小编主动给他们发送了一条问候语<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ name = [<span class="string">"wangtianlai"</span>,<span class="string">"wangxiaomeng"</span>,<span class="string">"wangyao"</span>]</span><br></pre></td></tr></table></figure></p>
+<p>为每个朋友送上祝福<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(<span class="string">"how are you"</span> + <span class="string">","</span> + name[0] + <span class="string">"!"</span> )</span><br><span class="line">$ <span class="built_in">print</span>(<span class="string">"how are you"</span> + <span class="string">","</span> + name[1] + <span class="string">"!"</span> )</span><br><span class="line">$ <span class="built_in">print</span>(<span class="string">"how are you"</span> + <span class="string">","</span> + name[2] + <span class="string">"!"</span> )</span><br></pre></td></tr></table></figure></p>
+<p>2.小编做饭手艺不错，要请三个朋友来吃晚饭<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ Guests = [<span class="string">"liuyifei"</span>,<span class="string">"fanbingbing"</span>,<span class="string">"zhangbiyi"</span>]</span><br></pre></td></tr></table></figure></p>
+<p>3.把三个朋友的名字打印到纸上，省得忘记了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ Guests_one = Guests[0]</span><br><span class="line">$ Guests_two = Guests[1]</span><br><span class="line">$ Guests_three = Guests[2]</span><br><span class="line">`</span><br></pre></td></tr></table></figure></p>
+<p>4.然后给小编有基友发送邀请信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(<span class="string">'诚意邀请'</span>,Guests_one + <span class="string">","</span> + Guests_two + <span class="string">","</span> + Guests_three,<span class="string">'来参加周五晚上的宴会'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>5.突然小编接到电话，有一个基友晚上女朋友要来，需要在家收拾床铺，不能前来了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(Guests_three,<span class="string">"在家伺候女朋友，不能来参加晚会了！"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>6.少一个基友不行呀，再重新邀请一位日本的朋友，中文名字叫龙泽<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ Guests[2] = <span class="string">"longze"</span></span><br></pre></td></tr></table></figure></p>
+<p>7.重新把名字打印，向每位朋友发出邀请<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ Guests_one = Guests[0]</span><br><span class="line">$ Guests_two = Guests[1]</span><br><span class="line">$ Guests_three = Guests[2]</span><br><span class="line">$ <span class="built_in">print</span>(<span class="string">'诚意邀请'</span>,Guests_one + <span class="string">","</span> + Guests_two + <span class="string">","</span> + Guests_three,<span class="string">'来参加周五晚上的宴会'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>8.小编突然发现一张大桌子，可能坐下更多的人，所以小编决定再多邀请几个来吃饭<br>先在名单开头加一个好友<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ Guests.insert(0,<span class="string">"wangludan"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>9.在名单的中间加一个好友<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ Guests.insert(2,<span class="string">"景德"</span>)</span><br><span class="line">$ <span class="built_in">print</span>(Guests)</span><br></pre></td></tr></table></figure></p>
+<p>10.把一个新朋友添加到名单结尾<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ Guests.append(<span class="string">"神仙姐姐"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>11.重新打印名单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(Guests)</span><br></pre></td></tr></table></figure></p>
+<p>12.突然发现菜不够了，只能宴请两位朋友<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(<span class="string">"对不起！我只能邀请两位朋友来参加宴会了!"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>13.删除名单名字，每删除一次，向朋友说明情况<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ Guests.pop()</span><br><span class="line">$ Guests_pop = Guests.pop()</span><br><span class="line">$ <span class="built_in">print</span>(<span class="string">"不好意思"</span>,Guests_pop,<span class="string">"今天晚上不邀请你来参加晚宴了!"</span>)</span><br><span class="line">$ Guests.pop()</span><br><span class="line">$ Guests.pop()</span><br></pre></td></tr></table></figure></p>
+<p>14.再看看还有谁能来吃饭<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(Guests)</span><br><span class="line">$ Guests_new_one = Guests[0]</span><br><span class="line">$ Guests_new_two = Guests[1]</span><br></pre></td></tr></table></figure></p>
+<p>15.向剩下的两位朋友发送消息依然可以在邀请之列<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(Guests_new_one,Guests_new_two,<span class="string">"很高兴能继续邀请两位来参加宴会!"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>16.大家吃完所了，都走了，名单成空的了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ del Guests[0]</span><br><span class="line">$ del Guests[0]</span><br><span class="line">$ <span class="built_in">print</span>(Guests)</span><br></pre></td></tr></table></figure></p>
+<p>第二部分：<br>1.朋友开了一个蛋糕店，有很多甜点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pisa = [<span class="string">"芝士"</span>,<span class="string">"奶油"</span>,<span class="string">"蛋糕"</span>,<span class="string">"披萨"</span>,<span class="string">'面包'</span>,<span class="string">'饼干'</span>]</span><br></pre></td></tr></table></figure></p>
+<p>2.我想吃店里的前三样甜点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(<span class="string">'前三个元素'</span>,pisa[0:3])</span><br></pre></td></tr></table></figure></p>
+<p>3.小姐姐想吃中间的三样甜点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(<span class="string">'中间三个元素'</span>,pisa[2:5])</span><br></pre></td></tr></table></figure></p>
+<p>4.老板娘想吃最的的三样甜点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(<span class="string">'后三个元素'</span>,pisa[-3:])</span><br></pre></td></tr></table></figure></p>
+<p>5.小编开了一个跟朋友一模一样的甜点店<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ friend_food = pisa[:]</span><br></pre></td></tr></table></figure></p>
+<p>6.小编自已创造的新产品<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pisa.append(<span class="string">"花生"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>7.朋友也有祖传秘方，生产出一种受欢迎的产品<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ friend_food.append(<span class="string">"大豆"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>8.小编给顾客介绍所有的产品<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(<span class="string">'here is my food list'</span>)</span><br><span class="line">$ <span class="keyword">for</span> f <span class="keyword">in</span> pisa:</span><br><span class="line">$ 	<span class="built_in">print</span>(f)</span><br><span class="line">$ <span class="built_in">print</span>(pisa)</span><br></pre></td></tr></table></figure></p>
+<p>9.朋友也是极力推荐自己的产品<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(<span class="string">'my friend food list'</span>)</span><br><span class="line">$ <span class="keyword">for</span> x <span class="keyword">in</span> friend_food:</span><br><span class="line">$	 <span class="built_in">print</span>(x)</span><br><span class="line">$ <span class="built_in">print</span>(friend_food)</span><br></pre></td></tr></table></figure></p>
+<p>10.小编喜欢店里的每一样甜点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">for</span> pi <span class="keyword">in</span> pisa:</span><br><span class="line">$	 <span class="built_in">print</span>(<span class="string">"I like"</span>, pi)</span><br><span class="line">$ <span class="built_in">print</span>(<span class="string">"I rellay like"</span>,pisa)</span><br></pre></td></tr></table></figure></p>
+<p>11.小编原来还是一个喜欢动物的爱心人士<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ animal = [<span class="string">'cat'</span>,<span class="string">'dog'</span>,<span class="string">'pig'</span>]</span><br><span class="line">$ <span class="keyword">for</span> x <span class="keyword">in</span> animal:</span><br><span class="line">$	 <span class="built_in">print</span>(x ,<span class="string">'is good!'</span>)</span><br><span class="line">$ <span class="built_in">print</span>(<span class="string">'I like animal!'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>12.循环打印1-10的平方，并创建列表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ squares = []</span><br><span class="line">$ <span class="keyword">for</span> squeare <span class="keyword">in</span> range(1,11):</span><br><span class="line">$	 value = squeare**2</span><br><span class="line">$	 squares.append(value)</span><br><span class="line">$ <span class="built_in">print</span>(squares)</span><br></pre></td></tr></table></figure></p>
+<p>第三部分：</p>
+<p>1.创建一个列表，循环打印1到10的数字<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">for</span> x <span class="keyword">in</span> range(1,21):</span><br><span class="line">$	<span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure></p>
+<p>2.把1-100的整数创建列表，并求最大，最小值，和所有数据之和<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ number = list(range(1,101))</span><br><span class="line">$ <span class="built_in">print</span>(number)</span><br><span class="line">$ <span class="built_in">print</span>(max(number))</span><br><span class="line">$ <span class="built_in">print</span>(min(number))</span><br><span class="line">$ <span class="built_in">print</span>(sum(number))</span><br></pre></td></tr></table></figure></p>
+<p>2.创建一个列表，包含1到20的奇数，并循环打印出来<br>方法一：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">for</span> y  <span class="keyword">in</span> range(1,20):</span><br><span class="line">$	<span class="keyword">if</span> y%2 ==1:</span><br><span class="line">$		<span class="built_in">print</span>(y)</span><br></pre></td></tr></table></figure></p>
+<p>方法二：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ number = list(range(1,20,2))</span><br><span class="line">$ <span class="keyword">for</span> x <span class="keyword">in</span> number:</span><br><span class="line">$	<span class="built_in">print</span>(x)</span><br><span class="line">$ <span class="built_in">print</span>(number)</span><br></pre></td></tr></table></figure></p>
+<p>3.创建一个列表，包含3到30之间能被3整除的数字，然后循环打印出来<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ num = list(range(3,30,3))</span><br><span class="line">$ <span class="keyword">for</span> n <span class="keyword">in</span> num:</span><br><span class="line">$	<span class="built_in">print</span>(n)</span><br><span class="line"><span class="variable">$print</span>(num)</span><br></pre></td></tr></table></figure></p>
+<p>4.创建一个列表，包含1到10整数的立方，并打印出来<br>方法一：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ number = list((i**3 <span class="keyword">for</span> i <span class="keyword">in</span> range(1,11)))</span><br><span class="line">$ <span class="keyword">for</span> x <span class="keyword">in</span> number:</span><br><span class="line">$	<span class="built_in">print</span>(x)</span><br><span class="line"><span class="variable">$print</span>(number)</span><br></pre></td></tr></table></figure></p>
+<p>方法二:(解析表达式)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ jiexi = [w**3 <span class="keyword">for</span> w <span class="keyword">in</span> range(1,11)]</span><br><span class="line">$ <span class="built_in">print</span>(jiexi)</span><br></pre></td></tr></table></figure></p>
+<p>5.创建一个元组,并打印元组元素<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(<span class="string">'here is old foods'</span>)</span><br><span class="line">$ foods = (<span class="string">'大虾'</span>,<span class="string">'烤肉'</span>,<span class="string">'鸡肝'</span>,<span class="string">'哈利'</span>,<span class="string">'海红'</span>)</span><br><span class="line">$ <span class="keyword">for</span> food <span class="keyword">in</span> foods:</span><br><span class="line">$	<span class="built_in">print</span>(food)</span><br></pre></td></tr></table></figure></p>
+<p>6.修改其中的一个元素，系统报错.f元组元素不可修改<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ foods[0] = <span class="string">'河虾'</span></span><br></pre></td></tr></table></figure></p>
+<p>7.重新定义元组<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">print</span>(<span class="string">'here is new foods'</span>)</span><br><span class="line">$ new_foods = (<span class="string">'虾皮'</span>,<span class="string">'烤肉'</span>,<span class="string">'鱿鱼'</span>,<span class="string">'哈利'</span>,<span class="string">'海红'</span>)</span><br><span class="line">$ <span class="keyword">for</span> x <span class="keyword">in</span> new_foods:</span><br><span class="line">$	<span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure></p>
+<p>8.比较两个字符串是否相等<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ a = <span class="string">'alex'</span></span><br><span class="line">$ b = <span class="string">"alox"</span></span><br><span class="line"><span class="built_in">print</span>(a != b )</span><br></pre></td></tr></table></figure></p>
+<p>9.使用lower()进行比较<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ a = <span class="string">'alEX'</span></span><br><span class="line">$ b = <span class="string">"alx"</span></span><br><span class="line"><span class="built_in">print</span>(a.lower() == b)</span><br></pre></td></tr></table></figure></p>
+<p>第四部分：<br>1.判断外星人颜色-001<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ alien_color = <span class="string">"green"</span></span><br><span class="line">$ <span class="keyword">if</span> alien_color == <span class="string">'green'</span>:</span><br><span class="line">$	<span class="built_in">print</span>(<span class="string">'恭喜你，获得五个金点值!'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>2.判断外星人颜色-002<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ alien_color = <span class="string">"red"</span></span><br><span class="line">$ <span class="keyword">if</span> alien_color == <span class="string">'green'</span>:</span><br><span class="line">$	<span class="built_in">print</span>(<span class="string">'恭喜你，获得五个金点值!'</span>)</span><br><span class="line">```	</span><br><span class="line">3.判断外星人颜色-003</span><br><span class="line">```bash</span><br><span class="line">$ alien_color = <span class="string">'green'</span></span><br><span class="line">$ <span class="keyword">if</span> alien_color == <span class="string">'green'</span>:</span><br><span class="line">$	<span class="built_in">print</span>(<span class="string">"获得10个点"</span>)</span><br><span class="line">$ <span class="keyword">else</span>:</span><br><span class="line">$	<span class="built_in">print</span>(<span class="string">'你没有射击外星人'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>4.判断外星人颜色-004<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ alien_color = <span class="string">'yellow'</span></span><br><span class="line">$ <span class="keyword">if</span> alien_color == <span class="string">'green'</span>:</span><br><span class="line">$	<span class="built_in">print</span>(<span class="string">"获得10个点"</span>)</span><br><span class="line"><span class="variable">$else</span>:</span><br><span class="line">$	<span class="built_in">print</span>(<span class="string">'你没有射击外星人'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>5.判断外星人-005<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">alien_color = <span class="string">'red'</span></span><br><span class="line"><span class="keyword">if</span> alien_color == <span class="string">'green'</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'你获得5个金点'</span>)</span><br><span class="line"><span class="keyword">elif</span> alien_color == <span class="string">'yellow'</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'你获得10个金点'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'你获得15个金点'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>6.判断人的一生阶段<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">age = 89</span><br><span class="line"><span class="keyword">if</span> age &lt; 2:</span><br><span class="line">	prin(<span class="string">'you are baby!'</span>)</span><br><span class="line"><span class="keyword">elif</span> age &gt;=2 and age &lt;4:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'你正在蹒跚学步'</span>)</span><br><span class="line"><span class="keyword">elif</span> age &gt;=4 and age &lt;13:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'你是一个儿童'</span>)</span><br><span class="line"><span class="keyword">elif</span> age &gt;=13 and age &lt; 20:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'you are young!'</span>)</span><br><span class="line"><span class="keyword">elif</span> age &gt;=20 and age &lt;	65:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'你是成年人!'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'你是老年人'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>7.小姐姐喜欢吃的水果<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">favorite_fruits = [<span class="string">'apple'</span>,<span class="string">'banane'</span>,<span class="string">'orange'</span>] </span><br><span class="line"><span class="keyword">if</span> <span class="string">'apple'</span> <span class="keyword">in</span> favorite_fruits:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'I like apple'</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="string">'banane'</span> <span class="keyword">in</span> favorite_fruits:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'i like banane'</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="string">'orange'</span> <span class="keyword">in</span> favorite_fruits:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'i like orange'</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="string">'taozi'</span> <span class="keyword">in</span> favorite_fruits:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'i like taozi'</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="string">'lizi'</span> not <span class="keyword">in</span> favorite_fruits:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'我不喜欢吃lii'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>8.客人点菜系统<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">shoping = [<span class="string">'土豆丝'</span>,<span class="string">'黄瓜'</span>,<span class="string">'西红柿'</span>]</span><br><span class="line"><span class="keyword">for</span> shop <span class="keyword">in</span> shoping:</span><br><span class="line">	<span class="keyword">if</span> shop == <span class="string">'土豆丝'</span>:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">'sorry,tuousi is empty!'</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">"adding"</span> + shop + <span class="string">'.'</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"finish the shoping "</span>)</span><br></pre></td></tr></table></figure></p>
+<p>9.创建用户列表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">user_list = [<span class="string">'join'</span>,<span class="string">'jack'</span>,<span class="string">'mike'</span>,<span class="string">'admin'</span>,<span class="string">'lily'</span>]</span><br><span class="line">user_list = []</span><br><span class="line"><span class="keyword">if</span> user_list == []:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">'we need some users!'</span>)</span><br><span class="line"><span class="keyword">for</span> user <span class="keyword">in</span> user_list:</span><br><span class="line">	<span class="keyword">if</span> user == <span class="string">'admin'</span>:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">'you are admin user ,you can do anything!'</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">'welcome login!'</span>)</span><br><span class="line">user_list.clear()</span><br><span class="line"><span class="built_in">print</span>(user_list)</span><br></pre></td></tr></table></figure></p>
+<p>10.判断注册用户是否有效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">current_users = [<span class="string">'lucy'</span>,<span class="string">'lily'</span>,<span class="string">'black'</span>,<span class="string">'mike'</span>,<span class="string">'jack'</span>] </span><br><span class="line">new_users = [<span class="string">'lucy'</span>,<span class="string">'liuyifei'</span>,<span class="string">'black'</span>,<span class="string">'tangyan'</span>,<span class="string">'jack'</span>] </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> user <span class="keyword">in</span> new_users:</span><br><span class="line">	<span class="keyword">if</span> user.lower() <span class="keyword">in</span> current_users:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">'username is userd!'</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">'username is not userd！'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'login is finished!'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>11.打印序数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">number_list = [1,2,3,4,5,6,7,8,9]</span><br><span class="line"><span class="keyword">for</span> y <span class="keyword">in</span> number_list:</span><br><span class="line">	<span class="keyword">if</span> y == 1:</span><br><span class="line">		<span class="built_in">print</span>(str(y)+ <span class="string">'st'</span>)</span><br><span class="line">	<span class="keyword">elif</span> y == 2:</span><br><span class="line">		<span class="built_in">print</span>(str(y)+<span class="string">'nd'</span>)</span><br><span class="line">	<span class="keyword">elif</span> y ==3:</span><br><span class="line">		<span class="built_in">print</span>(str(y) + <span class="string">'rd'</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="built_in">print</span>(str(y)+<span class="string">'th'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>今天的笔记全部都在这了，算一算写了不少代码呀，哈哈。光整理就一个多小时，给自己加油，继续努力！<br>累了一天了，是时候让小姐姐出厂了，给小编按摩一下……<br><img src="/images/肚皮.jpg" alt="&#39;肚皮&#39;"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/21/CentOS6.9桌面系统安装五笔输入法 /" rel="next" title="CentOS6.9桌面系统安装五笔输入法">
+                <i class="fa fa-chevron-left"></i> CentOS6.9桌面系统安装五笔输入法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">望穿秋水</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/fancunjun" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">望穿秋水</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
