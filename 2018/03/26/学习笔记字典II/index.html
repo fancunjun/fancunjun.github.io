@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+<meta name="description" content="—title: 学习笔记之字典IIdate: 2018-03-22—#1.创建字典user_0 = {‘username’ : ‘fancunjun’,‘first_name’:’fan’,‘last_name’:’cunjun’}#2.遍历字典for key,value in user_0.items():print(‘\nkey:’+ key,’value:’+value)#3.遍历字典中的所">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一个小白的python之路">
+<meta property="og:url" content="http://yoursite.com/2018/03/26/学习笔记字典II/index.html">
+<meta property="og:site_name" content="一个小白的python之路">
+<meta property="og:description" content="—title: 学习笔记之字典IIdate: 2018-03-22—#1.创建字典user_0 = {‘username’ : ‘fancunjun’,‘first_name’:’fan’,‘last_name’:’cunjun’}#2.遍历字典for key,value in user_0.items():print(‘\nkey:’+ key,’value:’+value)#3.遍历字典中的所">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-26T06:49:07.389Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一个小白的python之路">
+<meta name="twitter:description" content="—title: 学习笔记之字典IIdate: 2018-03-22—#1.创建字典user_0 = {‘username’ : ‘fancunjun’,‘first_name’:’fan’,‘last_name’:’cunjun’}#2.遍历字典for key,value in user_0.items():print(‘\nkey:’+ key,’value:’+value)#3.遍历字典中的所">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/26/学习笔记字典II/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title> | 一个小白的python之路</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一个小白的python之路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">勤学如春起之苗，不见其增，日有所长；辍学如磨刀之石，不见其损，日有所亏。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/学习笔记字典II/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="望穿秋水">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一个小白的python之路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-26T14:23:00+08:00">2018-03-26</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="—"><a href="#—" class="headerlink" title="—"></a>—</h1><h1 id="title-学习笔记之字典II"><a href="#title-学习笔记之字典II" class="headerlink" title="title: 学习笔记之字典II"></a>title: 学习笔记之字典II</h1><h1 id="date-2018-03-22"><a href="#date-2018-03-22" class="headerlink" title="date: 2018-03-22"></a>date: 2018-03-22</h1><h1 id="—-1"><a href="#—-1" class="headerlink" title="—"></a>—</h1><h1 id="1-创建字典"><a href="#1-创建字典" class="headerlink" title="#1.创建字典"></a>#1.创建字典</h1><h1 id="user-0"><a href="#user-0" class="headerlink" title="user_0 = {"></a>user_0 = {</h1><h1 id="‘username’-‘fancunjun’"><a href="#‘username’-‘fancunjun’" class="headerlink" title="‘username’ : ‘fancunjun’,"></a>‘username’ : ‘fancunjun’,</h1><h1 id="‘first-name’-’fan’"><a href="#‘first-name’-’fan’" class="headerlink" title="‘first_name’:’fan’,"></a>‘first_name’:’fan’,</h1><h1 id="‘last-name’-’cunjun’"><a href="#‘last-name’-’cunjun’" class="headerlink" title="‘last_name’:’cunjun’"></a>‘last_name’:’cunjun’</h1><h1 id=""><a href="#" class="headerlink" title="}"></a>}</h1><h1 id="2-遍历字典"><a href="#2-遍历字典" class="headerlink" title="#2.遍历字典"></a>#2.遍历字典</h1><h1 id="for-key-value-in-user-0-items"><a href="#for-key-value-in-user-0-items" class="headerlink" title="for key,value in user_0.items():"></a>for key,value in user_0.items():</h1><h1 id="print-‘-nkey-’-key-’value-’-value"><a href="#print-‘-nkey-’-key-’value-’-value" class="headerlink" title="print(‘\nkey:’+ key,’value:’+value)"></a>print(‘\nkey:’+ key,’value:’+value)</h1><h1 id="3-遍历字典中的所有的键"><a href="#3-遍历字典中的所有的键" class="headerlink" title="#3.遍历字典中的所有的键"></a>#3.遍历字典中的所有的键</h1><h1 id="for-name-in-user-0"><a href="#for-name-in-user-0" class="headerlink" title="for name in user_0:"></a>for name in user_0:</h1><h1 id="print-name"><a href="#print-name" class="headerlink" title="print(name)"></a>print(name)</h1><h1 id="4-给出指定朋友喜欢的编程语言"><a href="#4-给出指定朋友喜欢的编程语言" class="headerlink" title="#4.给出指定朋友喜欢的编程语言"></a>#4.给出指定朋友喜欢的编程语言</h1><h1 id="favorite-langeages"><a href="#favorite-langeages" class="headerlink" title="favorite_langeages = {"></a>favorite_langeages = {</h1><h1 id="‘join’-’c’"><a href="#‘join’-’c’" class="headerlink" title="‘join’:’c’,"></a>‘join’:’c’,</h1><h1 id="‘jack’-’java’"><a href="#‘jack’-’java’" class="headerlink" title="‘jack’:’java’,"></a>‘jack’:’java’,</h1><h1 id="‘mike’-’c-’"><a href="#‘mike’-’c-’" class="headerlink" title="‘mike’:’c++’,"></a>‘mike’:’c++’,</h1><h1 id="‘fancunjun’-’python’"><a href="#‘fancunjun’-’python’" class="headerlink" title="‘fancunjun’:’python’"></a>‘fancunjun’:’python’</h1><h1 id="-1"><a href="#-1" class="headerlink" title="}"></a>}</h1><h1 id="friends-‘jack’-’fancunjun’"><a href="#friends-‘jack’-’fancunjun’" class="headerlink" title="friends = [‘jack’,’fancunjun’]"></a>friends = [‘jack’,’fancunjun’]</h1><h1 id="for-name-in-favorite-langeages"><a href="#for-name-in-favorite-langeages" class="headerlink" title="for name  in favorite_langeages :"></a>for name  in favorite_langeages :</h1><h1 id="if-name-in-friends"><a href="#if-name-in-friends" class="headerlink" title="if name in friends:"></a>if name in friends:</h1><h1 id="print-‘hi-’-name-‘i-see-you-favorite-langeages-is-‘-favorite-langeages-name"><a href="#print-‘hi-’-name-‘i-see-you-favorite-langeages-is-‘-favorite-langeages-name" class="headerlink" title="print(‘hi ,’+ name + ‘i see you favorite_langeages is ‘ + favorite_langeages[name])"></a>print(‘hi ,’+ name + ‘i see you favorite_langeages is ‘ + favorite_langeages[name])</h1><p>#5.查看元素是否存在字典中</p>
+<h1 id="favorite-langeages-1"><a href="#favorite-langeages-1" class="headerlink" title="favorite_langeages = {"></a>favorite_langeages = {</h1><h1 id="‘join’-’c’-1"><a href="#‘join’-’c’-1" class="headerlink" title="‘join’:’c’,"></a>‘join’:’c’,</h1><h1 id="‘jack’-’java’-1"><a href="#‘jack’-’java’-1" class="headerlink" title="‘jack’:’java’,"></a>‘jack’:’java’,</h1><h1 id="‘mike’-’c-’-1"><a href="#‘mike’-’c-’-1" class="headerlink" title="‘mike’:’c++’,"></a>‘mike’:’c++’,</h1><h1 id="‘fancunjun’-’python’-1"><a href="#‘fancunjun’-’python’-1" class="headerlink" title="‘fancunjun’:’python’"></a>‘fancunjun’:’python’</h1><h1 id="-2"><a href="#-2" class="headerlink" title="}"></a>}</h1><h1 id="if-‘wangtiangui’-not-in-favorite-langeages"><a href="#if-‘wangtiangui’-not-in-favorite-langeages" class="headerlink" title="if ‘wangtiangui’ not in favorite_langeages:"></a>if ‘wangtiangui’ not in favorite_langeages:</h1><h1 id="print-‘please-jion-in-the-test-’"><a href="#print-‘please-jion-in-the-test-’" class="headerlink" title="print(‘please jion in the test !’)"></a>print(‘please jion in the test !’)</h1><p>#6.按照顺序遍历字典</p>
+<h1 id="favorite-langeages-2"><a href="#favorite-langeages-2" class="headerlink" title="favorite_langeages = {"></a>favorite_langeages = {</h1><h1 id="‘join’-’c’-2"><a href="#‘join’-’c’-2" class="headerlink" title="‘join’:’c’,"></a>‘join’:’c’,</h1><h1 id="‘jack’-’java’-2"><a href="#‘jack’-’java’-2" class="headerlink" title="‘jack’:’java’,"></a>‘jack’:’java’,</h1><h1 id="‘mike’-’c-’-2"><a href="#‘mike’-’c-’-2" class="headerlink" title="‘mike’:’c++’,"></a>‘mike’:’c++’,</h1><h1 id="‘fancunjun’-’python’-2"><a href="#‘fancunjun’-’python’-2" class="headerlink" title="‘fancunjun’:’python’"></a>‘fancunjun’:’python’</h1><h1 id="-3"><a href="#-3" class="headerlink" title="}"></a>}</h1><h1 id="for-name-in-sorted-favorite-langeages-keys"><a href="#for-name-in-sorted-favorite-langeages-keys" class="headerlink" title="for name in sorted(favorite_langeages.keys()):"></a>for name in sorted(favorite_langeages.keys()):</h1><h1 id="print-“thank-you-”-name-title"><a href="#print-“thank-you-”-name-title" class="headerlink" title="print(“thank you!” + name.title())"></a>print(“thank you!” + name.title())</h1><p>#7.遍历字典中所有的值</p>
+<p>#favorite_langeages = {</p>
+<h1 id="‘join’-’c’-3"><a href="#‘join’-’c’-3" class="headerlink" title="‘join’:’c’,"></a>‘join’:’c’,</h1><h1 id="‘jacd’-’java’"><a href="#‘jacd’-’java’" class="headerlink" title="‘jacd’:’java’,"></a>‘jacd’:’java’,</h1><h1 id="‘mike’-’c-’-3"><a href="#‘mike’-’c-’-3" class="headerlink" title="‘mike’:’c++’,"></a>‘mike’:’c++’,</h1><h1 id="‘fancunjun’-’python’-3"><a href="#‘fancunjun’-’python’-3" class="headerlink" title="‘fancunjun’:’python’"></a>‘fancunjun’:’python’</h1><h1 id="-4"><a href="#-4" class="headerlink" title="}"></a>}</h1><h1 id="print-‘以下是打印字典中所的值’"><a href="#print-‘以下是打印字典中所的值’" class="headerlink" title="print(‘以下是打印字典中所的值’)"></a>print(‘以下是打印字典中所的值’)</h1><h1 id="for-va-in-favorite-langeages-values"><a href="#for-va-in-favorite-langeages-values" class="headerlink" title="for va in favorite_langeages.values():"></a>for va in favorite_langeages.values():</h1><h1 id="print-va-title"><a href="#print-va-title" class="headerlink" title="print(va.title())"></a>print(va.title())</h1><p>#8.利用set去除字典中的重复项</p>
+<h1 id="favorite-langeages-3"><a href="#favorite-langeages-3" class="headerlink" title="favorite_langeages = {"></a>favorite_langeages = {</h1><h1 id="‘join’-’c’-4"><a href="#‘join’-’c’-4" class="headerlink" title="‘join’:’c’,"></a>‘join’:’c’,</h1><h1 id="‘jacd’-’python’"><a href="#‘jacd’-’python’" class="headerlink" title="‘jacd’:’python’,"></a>‘jacd’:’python’,</h1><h1 id="‘mike’-’c-’-4"><a href="#‘mike’-’c-’-4" class="headerlink" title="‘mike’:’c++’,"></a>‘mike’:’c++’,</h1><h1 id="‘fancunjun’-’python’-4"><a href="#‘fancunjun’-’python’-4" class="headerlink" title="‘fancunjun’:’python’"></a>‘fancunjun’:’python’</h1><h1 id="-5"><a href="#-5" class="headerlink" title="}"></a>}</h1><h1 id="print-‘以下是利用set集合去除重复项’"><a href="#print-‘以下是利用set集合去除重复项’" class="headerlink" title="print(‘以下是利用set集合去除重复项’)"></a>print(‘以下是利用set集合去除重复项’)</h1><h1 id="for-val-in-set-favorite-langeages-values"><a href="#for-val-in-set-favorite-langeages-values" class="headerlink" title="for val in set(favorite_langeages.values()):"></a>for val in set(favorite_langeages.values()):</h1><h1 id="print-val-title"><a href="#print-val-title" class="headerlink" title="print(val.title())"></a>print(val.title())</h1><p>#9.编写词汇表</p>
+<h1 id="glossary"><a href="#glossary" class="headerlink" title="glossary = {"></a>glossary = {</h1><h1 id="‘变量’-’是可改变，可以通过变量名来访问变量’"><a href="#‘变量’-’是可改变，可以通过变量名来访问变量’" class="headerlink" title="‘变量’:’是可改变，可以通过变量名来访问变量’,"></a>‘变量’:’是可改变，可以通过变量名来访问变量’,</h1><h1 id="‘列表’-’存储有序的元素的组合’"><a href="#‘列表’-’存储有序的元素的组合’" class="headerlink" title="‘列表’:’存储有序的元素的组合’,"></a>‘列表’:’存储有序的元素的组合’,</h1><h1 id="‘元组’-’存储元素，不可被更改’"><a href="#‘元组’-’存储元素，不可被更改’" class="headerlink" title="‘元组’:’存储元素，不可被更改’,"></a>‘元组’:’存储元素，不可被更改’,</h1><h1 id="‘字典’-’存储一对键值对’"><a href="#‘字典’-’存储一对键值对’" class="headerlink" title="‘字典’:’存储一对键值对’,"></a>‘字典’:’存储一对键值对’,</h1><h1 id="‘索引’-’元素的下标位置，可通过索引来访问元素’"><a href="#‘索引’-’元素的下标位置，可通过索引来访问元素’" class="headerlink" title="‘索引’:’元素的下标位置，可通过索引来访问元素’,"></a>‘索引’:’元素的下标位置，可通过索引来访问元素’,</h1><h1 id="‘vscode’-’配置python环境比较难’"><a href="#‘vscode’-’配置python环境比较难’" class="headerlink" title="‘vscode’:’配置python环境比较难’"></a>‘vscode’:’配置python环境比较难’</h1><h1 id="-6"><a href="#-6" class="headerlink" title="}"></a>}</h1><h1 id="print-‘打印字典的键值对’"><a href="#print-‘打印字典的键值对’" class="headerlink" title="print(‘打印字典的键值对’)"></a>print(‘打印字典的键值对’)</h1><h1 id="for-keys-values-in-glossary-items"><a href="#for-keys-values-in-glossary-items" class="headerlink" title="for keys,values in glossary.items():"></a>for keys,values in glossary.items():</h1><h1 id="print-keys-values"><a href="#print-keys-values" class="headerlink" title="print(keys,values)"></a>print(keys,values)</h1><p>#10.创建河流字典</p>
+<p>drivers = {<br>    ‘huanghe’:’china’,<br>    ‘changjiang’:’china’,<br>    ‘nile’:’egypt’<br>}<br>for driver in drivers.keys():<br>    print(‘你好！’ + driver)</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/26/Sublime Text3设置python开发环境/" rel="next" title="Sublime Text3设置python开发环境">
+                <i class="fa fa-chevron-left"></i> Sublime Text3设置python开发环境
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">望穿秋水</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/fancunjun" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#—"><span class="nav-number">1.</span> <span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#title-学习笔记之字典II"><span class="nav-number">2.</span> <span class="nav-text">title: 学习笔记之字典II</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#date-2018-03-22"><span class="nav-number">3.</span> <span class="nav-text">date: 2018-03-22</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#—-1"><span class="nav-number">4.</span> <span class="nav-text">—</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-创建字典"><span class="nav-number">5.</span> <span class="nav-text">#1.创建字典</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#user-0"><span class="nav-number">6.</span> <span class="nav-text">user_0 = {</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘username’-‘fancunjun’"><span class="nav-number">7.</span> <span class="nav-text">‘username’ : ‘fancunjun’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘first-name’-’fan’"><span class="nav-number">8.</span> <span class="nav-text">‘first_name’:’fan’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘last-name’-’cunjun’"><span class="nav-number">9.</span> <span class="nav-text">‘last_name’:’cunjun’</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">10.</span> <span class="nav-text">}</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-遍历字典"><span class="nav-number">11.</span> <span class="nav-text">#2.遍历字典</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#for-key-value-in-user-0-items"><span class="nav-number">12.</span> <span class="nav-text">for key,value in user_0.items():</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-‘-nkey-’-key-’value-’-value"><span class="nav-number">13.</span> <span class="nav-text">print(‘\nkey:’+ key,’value:’+value)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-遍历字典中的所有的键"><span class="nav-number">14.</span> <span class="nav-text">#3.遍历字典中的所有的键</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#for-name-in-user-0"><span class="nav-number">15.</span> <span class="nav-text">for name in user_0:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-name"><span class="nav-number">16.</span> <span class="nav-text">print(name)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-给出指定朋友喜欢的编程语言"><span class="nav-number">17.</span> <span class="nav-text">#4.给出指定朋友喜欢的编程语言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#favorite-langeages"><span class="nav-number">18.</span> <span class="nav-text">favorite_langeages = {</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘join’-’c’"><span class="nav-number">19.</span> <span class="nav-text">‘join’:’c’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘jack’-’java’"><span class="nav-number">20.</span> <span class="nav-text">‘jack’:’java’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘mike’-’c-’"><span class="nav-number">21.</span> <span class="nav-text">‘mike’:’c++’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘fancunjun’-’python’"><span class="nav-number">22.</span> <span class="nav-text">‘fancunjun’:’python’</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#-1"><span class="nav-number">23.</span> <span class="nav-text">}</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#friends-‘jack’-’fancunjun’"><span class="nav-number">24.</span> <span class="nav-text">friends = [‘jack’,’fancunjun’]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#for-name-in-favorite-langeages"><span class="nav-number">25.</span> <span class="nav-text">for name  in favorite_langeages :</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#if-name-in-friends"><span class="nav-number">26.</span> <span class="nav-text">if name in friends:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-‘hi-’-name-‘i-see-you-favorite-langeages-is-‘-favorite-langeages-name"><span class="nav-number">27.</span> <span class="nav-text">print(‘hi ,’+ name + ‘i see you favorite_langeages is ‘ + favorite_langeages[name])</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#favorite-langeages-1"><span class="nav-number">28.</span> <span class="nav-text">favorite_langeages = {</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘join’-’c’-1"><span class="nav-number">29.</span> <span class="nav-text">‘join’:’c’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘jack’-’java’-1"><span class="nav-number">30.</span> <span class="nav-text">‘jack’:’java’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘mike’-’c-’-1"><span class="nav-number">31.</span> <span class="nav-text">‘mike’:’c++’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘fancunjun’-’python’-1"><span class="nav-number">32.</span> <span class="nav-text">‘fancunjun’:’python’</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#-2"><span class="nav-number">33.</span> <span class="nav-text">}</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#if-‘wangtiangui’-not-in-favorite-langeages"><span class="nav-number">34.</span> <span class="nav-text">if ‘wangtiangui’ not in favorite_langeages:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-‘please-jion-in-the-test-’"><span class="nav-number">35.</span> <span class="nav-text">print(‘please jion in the test !’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#favorite-langeages-2"><span class="nav-number">36.</span> <span class="nav-text">favorite_langeages = {</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘join’-’c’-2"><span class="nav-number">37.</span> <span class="nav-text">‘join’:’c’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘jack’-’java’-2"><span class="nav-number">38.</span> <span class="nav-text">‘jack’:’java’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘mike’-’c-’-2"><span class="nav-number">39.</span> <span class="nav-text">‘mike’:’c++’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘fancunjun’-’python’-2"><span class="nav-number">40.</span> <span class="nav-text">‘fancunjun’:’python’</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#-3"><span class="nav-number">41.</span> <span class="nav-text">}</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#for-name-in-sorted-favorite-langeages-keys"><span class="nav-number">42.</span> <span class="nav-text">for name in sorted(favorite_langeages.keys()):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-“thank-you-”-name-title"><span class="nav-number">43.</span> <span class="nav-text">print(“thank you!” + name.title())</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘join’-’c’-3"><span class="nav-number">44.</span> <span class="nav-text">‘join’:’c’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘jacd’-’java’"><span class="nav-number">45.</span> <span class="nav-text">‘jacd’:’java’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘mike’-’c-’-3"><span class="nav-number">46.</span> <span class="nav-text">‘mike’:’c++’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘fancunjun’-’python’-3"><span class="nav-number">47.</span> <span class="nav-text">‘fancunjun’:’python’</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#-4"><span class="nav-number">48.</span> <span class="nav-text">}</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-‘以下是打印字典中所的值’"><span class="nav-number">49.</span> <span class="nav-text">print(‘以下是打印字典中所的值’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#for-va-in-favorite-langeages-values"><span class="nav-number">50.</span> <span class="nav-text">for va in favorite_langeages.values():</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-va-title"><span class="nav-number">51.</span> <span class="nav-text">print(va.title())</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#favorite-langeages-3"><span class="nav-number">52.</span> <span class="nav-text">favorite_langeages = {</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘join’-’c’-4"><span class="nav-number">53.</span> <span class="nav-text">‘join’:’c’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘jacd’-’python’"><span class="nav-number">54.</span> <span class="nav-text">‘jacd’:’python’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘mike’-’c-’-4"><span class="nav-number">55.</span> <span class="nav-text">‘mike’:’c++’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘fancunjun’-’python’-4"><span class="nav-number">56.</span> <span class="nav-text">‘fancunjun’:’python’</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#-5"><span class="nav-number">57.</span> <span class="nav-text">}</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-‘以下是利用set集合去除重复项’"><span class="nav-number">58.</span> <span class="nav-text">print(‘以下是利用set集合去除重复项’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#for-val-in-set-favorite-langeages-values"><span class="nav-number">59.</span> <span class="nav-text">for val in set(favorite_langeages.values()):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-val-title"><span class="nav-number">60.</span> <span class="nav-text">print(val.title())</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#glossary"><span class="nav-number">61.</span> <span class="nav-text">glossary = {</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘变量’-’是可改变，可以通过变量名来访问变量’"><span class="nav-number">62.</span> <span class="nav-text">‘变量’:’是可改变，可以通过变量名来访问变量’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘列表’-’存储有序的元素的组合’"><span class="nav-number">63.</span> <span class="nav-text">‘列表’:’存储有序的元素的组合’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘元组’-’存储元素，不可被更改’"><span class="nav-number">64.</span> <span class="nav-text">‘元组’:’存储元素，不可被更改’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘字典’-’存储一对键值对’"><span class="nav-number">65.</span> <span class="nav-text">‘字典’:’存储一对键值对’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘索引’-’元素的下标位置，可通过索引来访问元素’"><span class="nav-number">66.</span> <span class="nav-text">‘索引’:’元素的下标位置，可通过索引来访问元素’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘vscode’-’配置python环境比较难’"><span class="nav-number">67.</span> <span class="nav-text">‘vscode’:’配置python环境比较难’</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#-6"><span class="nav-number">68.</span> <span class="nav-text">}</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-‘打印字典的键值对’"><span class="nav-number">69.</span> <span class="nav-text">print(‘打印字典的键值对’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#for-keys-values-in-glossary-items"><span class="nav-number">70.</span> <span class="nav-text">for keys,values in glossary.items():</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-keys-values"><span class="nav-number">71.</span> <span class="nav-text">print(keys,values)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">望穿秋水</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
