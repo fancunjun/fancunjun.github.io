@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+<meta name="description" content="#定义一个函数 def descrede_city(city_name,city_country = ‘china’):print(city_name + ‘is in’ + city_country)descrede_city(‘qingdao’)descrede_city(‘shanghai’)descrede_city(‘huaehngdun’,city_country=’usa’)#返回简">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一个小白的python之路">
+<meta property="og:url" content="http://yoursite.com/2018/03/28/函数/index.html">
+<meta property="og:site_name" content="一个小白的python之路">
+<meta property="og:description" content="#定义一个函数 def descrede_city(city_name,city_country = ‘china’):print(city_name + ‘is in’ + city_country)descrede_city(‘qingdao’)descrede_city(‘shanghai’)descrede_city(‘huaehngdun’,city_country=’usa’)#返回简">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-02T00:53:16.601Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一个小白的python之路">
+<meta name="twitter:description" content="#定义一个函数 def descrede_city(city_name,city_country = ‘china’):print(city_name + ‘is in’ + city_country)descrede_city(‘qingdao’)descrede_city(‘shanghai’)descrede_city(‘huaehngdun’,city_country=’usa’)#返回简">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="一个小白的python之路" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/28/函数/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title> | 一个小白的python之路</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一个小白的python之路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">勤学如春起之苗，不见其增，日有所长；辍学如磨刀之石，不见其损，日有所亏。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="望穿秋水">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一个小白的python之路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+           
+          <span class="post-time">
+             
+
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T19:16:29+08:00">2018-03-28</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#定义一个函数</p>
+<h1 id="def-descrede-city-city-name-city-country-‘china’"><a href="#def-descrede-city-city-name-city-country-‘china’" class="headerlink" title="def descrede_city(city_name,city_country = ‘china’):"></a>def descrede_city(city_name,city_country = ‘china’):</h1><h1 id="print-city-name-‘is-in’-city-country"><a href="#print-city-name-‘is-in’-city-country" class="headerlink" title="print(city_name + ‘is in’ + city_country)"></a>print(city_name + ‘is in’ + city_country)</h1><h1 id="descrede-city-‘qingdao’"><a href="#descrede-city-‘qingdao’" class="headerlink" title="descrede_city(‘qingdao’)"></a>descrede_city(‘qingdao’)</h1><h1 id="descrede-city-‘shanghai’"><a href="#descrede-city-‘shanghai’" class="headerlink" title="descrede_city(‘shanghai’)"></a>descrede_city(‘shanghai’)</h1><h1 id="descrede-city-‘huaehngdun’-city-country-’usa’"><a href="#descrede-city-‘huaehngdun’-city-country-’usa’" class="headerlink" title="descrede_city(‘huaehngdun’,city_country=’usa’)"></a>descrede_city(‘huaehngdun’,city_country=’usa’)</h1><p>#返回简单值</p>
+<h1 id="def-get-formatted-name-first-name-last-name"><a href="#def-get-formatted-name-first-name-last-name" class="headerlink" title="def get_formatted_name(first_name,last_name):"></a>def get_formatted_name(first_name,last_name):</h1><h1 id="‘’’返回整洁的名字’’’"><a href="#‘’’返回整洁的名字’’’" class="headerlink" title="‘’’返回整洁的名字’’’"></a>‘’’返回整洁的名字’’’</h1><h1 id="full-name-first-name-last-name"><a href="#full-name-first-name-last-name" class="headerlink" title="full_name = first_name + last_name"></a>full_name = first_name + last_name</h1><h1 id="return-full-name-title"><a href="#return-full-name-title" class="headerlink" title="return full_name.title()"></a>return full_name.title()</h1><h1 id="musucian-get-formatted-name-‘fan’-’cunjun’"><a href="#musucian-get-formatted-name-‘fan’-’cunjun’" class="headerlink" title="musucian = get_formatted_name(‘fan’,’cunjun’)"></a>musucian = get_formatted_name(‘fan’,’cunjun’)</h1><h1 id="print-musucian"><a href="#print-musucian" class="headerlink" title="print(musucian)"></a>print(musucian)</h1><p>#创建一个函数形参包括 firstname,middle_name,last_name</p>
+<p>#def get_formatted_name(first_name,middle_name,last_name):</p>
+<p>#创建全名变量接收名字</p>
+<h1 id="full-name-first-name-middle-name-last-name"><a href="#full-name-first-name-middle-name-last-name" class="headerlink" title="full_name = first_name + middle_name + last_name"></a>full_name = first_name + middle_name + last_name</h1><p>#返回全名</p>
+<h1 id="return-full-name-title-1"><a href="#return-full-name-title-1" class="headerlink" title="return full_name.title()"></a>return full_name.title()</h1><p>#创建一个变量接收返回的值</p>
+<p>#musucian = get_formatted_name(‘fan’,’cun’,’jun’)</p>
+<p>#打印返回值</p>
+<p>#print(musucian)</p>
+<p>#创建一个函数形参包括 firstname,middle_name,last_name</p>
+<h1 id="def-get-formatted-name-first-name-last-name-middle-name-’’"><a href="#def-get-formatted-name-first-name-last-name-middle-name-’’" class="headerlink" title="def get_formatted_name(first_name,last_name,middle_name=’’):"></a>def get_formatted_name(first_name,last_name,middle_name=’’):</h1><p>#判断是否有中间名</p>
+<pre><code># if middle_name:
+</code></pre><p>#有中间名就把中间名加上</p>
+<pre><code>#    full_name = first_name + middle_name + last_name
+</code></pre><p>#没有中间名就忽略中间名</p>
+<pre><code># else:
+#     full_name = first_name + last_name
+</code></pre><p>#返回值</p>
+<pre><code># return  full_name.title()
+</code></pre><p>#创建变量接收返回值</p>
+<h1 id="musucian-full-get-formatted-name-‘fan’-’cun’-’jun’"><a href="#musucian-full-get-formatted-name-‘fan’-’cun’-’jun’" class="headerlink" title="musucian_full = get_formatted_name(‘fan’,’cun’,’jun’)"></a>musucian_full = get_formatted_name(‘fan’,’cun’,’jun’)</h1><h1 id="musucian-nomiddle-get-formatted-name-‘fan’-’jun’"><a href="#musucian-nomiddle-get-formatted-name-‘fan’-’jun’" class="headerlink" title="musucian_nomiddle = get_formatted_name(‘fan’,’jun’)"></a>musucian_nomiddle = get_formatted_name(‘fan’,’jun’)</h1><p>#打印返回值</p>
+<h1 id="print-musucian-full"><a href="#print-musucian-full" class="headerlink" title="print(musucian_full)"></a>print(musucian_full)</h1><h1 id="print-musucian-nomiddle"><a href="#print-musucian-nomiddle" class="headerlink" title="print(musucian_nomiddle)"></a>print(musucian_nomiddle)</h1><h1 id="定义一个人的函数包括名和姓"><a href="#定义一个人的函数包括名和姓" class="headerlink" title="#定义一个人的函数包括名和姓"></a>#定义一个人的函数包括名和姓</h1><h1 id="def-build-person-first-name-last-name"><a href="#def-build-person-first-name-last-name" class="headerlink" title="def build_person(first_name, last_name):"></a>def build_person(first_name, last_name):</h1><p>#将接收的值存在一个字典中</p>
+<pre><code># person = {&apos;first&apos;:first_name,&apos;last&apos;:last_name}
+</code></pre><p>#返回这个字典</p>
+<h1 id="return-person"><a href="#return-person" class="headerlink" title="return person"></a>return person</h1><p> #变量接收返回值</p>
+<h1 id="musucian-build-person-‘liu’-’yifei’"><a href="#musucian-build-person-‘liu’-’yifei’" class="headerlink" title="musucian = build_person(‘liu’,’yifei’)"></a>musucian = build_person(‘liu’,’yifei’)</h1><p>#打印返回值</p>
+<h1 id="print-musucian-1"><a href="#print-musucian-1" class="headerlink" title="print(musucian)"></a>print(musucian)</h1><p>#定义一个函数，包括名，姓，和默认年龄</p>
+<h1 id="def-build-person-first-name-last-name-age-’’"><a href="#def-build-person-first-name-last-name-age-’’" class="headerlink" title="def build_person(first_name, last_name,age =’’):"></a>def build_person(first_name, last_name,age =’’):</h1><p>#返回字典，包括人的信息</p>
+<pre><code># person = {&apos;first&apos;:&apos;first_name&apos;,&apos;last&apos;:&apos;last_name&apos;}
+</code></pre><p>#判断如果有年龄，就把年龄赋值给函数中的年龄参数</p>
+<pre><code># if age:
+#     person[&apos;age&apos;]= age
+</code></pre><p>#返回字典</p>
+<pre><code># return person
+</code></pre><p>#变量接收返回值</p>
+<h1 id="musucian-build-person-‘yang’-’lan’-age-27"><a href="#musucian-build-person-‘yang’-’lan’-age-27" class="headerlink" title="musucian = build_person(‘yang’,’lan’,age =27)"></a>musucian = build_person(‘yang’,’lan’,age =27)</h1><p>#打印返回值</p>
+<h1 id="print-musucian-2"><a href="#print-musucian-2" class="headerlink" title="print(musucian)"></a>print(musucian)</h1><p>#定义一个函数，包括名和姓</p>
+<h1 id="def-build-person-first-name-last-name-1"><a href="#def-build-person-first-name-last-name-1" class="headerlink" title="def build_person(first_name, last_name):"></a>def build_person(first_name, last_name):</h1><p>#接收名和姓</p>
+<pre><code># full_name = first_name + last_name
+</code></pre><p>#返回接收的名字</p>
+<pre><code># return full_name
+</code></pre><p>#提示用户输入名字</p>
+<h1 id="while-True"><a href="#while-True" class="headerlink" title="while True:"></a>while True:</h1><pre><code># print(&apos;\nenter you name!&apos;)
+</code></pre><p>#提示用户输入q是退出</p>
+<pre><code># print(&apos;\nenter q exit!&apos;)
+</code></pre><p>#接收输入的first_name名字</p>
+<pre><code># f_name = input(&apos;First_name&apos;)
+</code></pre><p>#当first_name输入为q时，退出程序</p>
+<pre><code># if f_name == &apos;q&apos;:
+#     break
+</code></pre><h1 id="接收last-name名字"><a href="#接收last-name名字" class="headerlink" title="接收last_name名字"></a>接收last_name名字</h1><pre><code># l_name = input(&apos;Lsat_name&apos;)
+</code></pre><p>#当last_name输入为q时，退出程序</p>
+<pre><code># if l_name == &apos;q&apos;:
+#     break
+</code></pre><p>#接收返回值</p>
+<pre><code># musucian = build_person(f_name,l_name)
+</code></pre><p>#打印返回值 </p>
+<h1 id="print-‘hellow-‘-musucian-‘-’"><a href="#print-‘hellow-‘-musucian-‘-’" class="headerlink" title="print(‘hellow ‘ + musucian + ‘!’)"></a>print(‘hellow ‘ + musucian + ‘!’)</h1><h1 id="print-‘exit’"><a href="#print-‘exit’" class="headerlink" title="print(‘exit’)"></a>print(‘exit’)</h1><p>#练习城市</p>
+<h1 id="def-city-countrys-city-name-city-country"><a href="#def-city-countrys-city-name-city-country" class="headerlink" title="def city_countrys(city_name, city_country):"></a>def city_countrys(city_name, city_country):</h1><h1 id="print-‘“‘-city-name-‘-’-city-country-‘“‘"><a href="#print-‘“‘-city-name-‘-’-city-country-‘“‘" class="headerlink" title="print(‘“‘ + city_name + ‘,’+ city_country + ‘“‘)"></a>print(‘“‘ + city_name + ‘,’+ city_country + ‘“‘)</h1><h1 id="print-‘“-s-s”‘-city-name-city-country"><a href="#print-‘“-s-s”‘-city-name-city-country" class="headerlink" title="print(‘“%s,%s”‘ %(city_name,city_country))"></a>print(‘“%s,%s”‘ %(city_name,city_country))</h1><h1 id="city-countrys-‘qingdao’-’china’"><a href="#city-countrys-‘qingdao’-’china’" class="headerlink" title="city_countrys(‘qingdao’,’china’)"></a>city_countrys(‘qingdao’,’china’)</h1><p>#传递列表</p>
+<p>#创建一个函数，形参为users</p>
+<h1 id="def-greet-users-names"><a href="#def-greet-users-names" class="headerlink" title="def greet_users(names):"></a>def greet_users(names):</h1><p>#遍历这个列表，向列表中的每个人发出问好</p>
+<pre><code># for name in names:
+#     msg = &apos;hellow&apos; + name.title() + &apos;!&apos;
+#     print(msg)
+</code></pre><p>#调用函数，传入实参</p>
+<h1 id="usernames-‘liuyifei’-’zhaowei’-’dongmingzhu’"><a href="#usernames-‘liuyifei’-’zhaowei’-’dongmingzhu’" class="headerlink" title="usernames = [‘liuyifei’,’zhaowei’,’dongmingzhu’]"></a>usernames = [‘liuyifei’,’zhaowei’,’dongmingzhu’]</h1><p>#打印所有问候语</p>
+<h1 id="greet-users-usernames"><a href="#greet-users-usernames" class="headerlink" title="greet_users(usernames)"></a>greet_users(usernames)</h1><p>#在函数中修改列表</p>
+<p>#定义一个函数包含需要打印的列表和接收 打印列表两个形参</p>
+<h1 id="def-print-models-unprinted-designs-completed-models"><a href="#def-print-models-unprinted-designs-completed-models" class="headerlink" title="def print_models(unprinted_designs,completed_models):"></a>def print_models(unprinted_designs,completed_models):</h1><p>#模拟打印的过程，将需要打印的列表参数打印存储到接收列表中</p>
+<pre><code># while unprinted_designs:
+#     current_design = unprinted_designs.pop()
+#     print(&apos;print models:&apos; + current_design) 
+</code></pre><p>#添加内容到completed</p>
+<pre><code># completed_models.append(current_design)
+</code></pre><p>#定义显示打印结果的参数，循环打印</p>
+<h1 id="def-show-completed-models-completed-models"><a href="#def-show-completed-models-completed-models" class="headerlink" title="def show_completed_models(completed_models):"></a>def show_completed_models(completed_models):</h1><h1 id="for-completed-model-in-completed-models"><a href="#for-completed-model-in-completed-models" class="headerlink" title="for completed_model in completed_models:"></a>for completed_model in completed_models:</h1><h1 id="print-completed-model"><a href="#print-completed-model" class="headerlink" title="print(completed_model)"></a>print(completed_model)</h1><p>#创建列表和空列表</p>
+<h1 id="unprinted-designs-‘liu’-’yyi’-’fei’"><a href="#unprinted-designs-‘liu’-’yyi’-’fei’" class="headerlink" title="unprinted_designs = [‘liu’,’yyi’,’fei’]"></a>unprinted_designs = [‘liu’,’yyi’,’fei’]</h1><h1 id="completed-models"><a href="#completed-models" class="headerlink" title="completed_models= []"></a>completed_models= []</h1><p>#调用显示列表的函数</p>
+<h1 id="print-models-unprinted-designs-completed-models"><a href="#print-models-unprinted-designs-completed-models" class="headerlink" title="print_models (unprinted_designs,completed_models)"></a>print_models (unprinted_designs,completed_models)</h1><h1 id="show-completed-models-completed-models"><a href="#show-completed-models-completed-models" class="headerlink" title="show_completed_models(completed_models)"></a>show_completed_models(completed_models)</h1><p>#定义一个makde_album的函数，</p>
+<h1 id="def-make-album-singer-name-album-name"><a href="#def-make-album-singer-name-album-name" class="headerlink" title="def make_album(singer_name,album_name):"></a>def make_album(singer_name,album_name):</h1><p>#描述的音乐的字典</p>
+<pre><code># album ={&apos;singer&apos;:singer_name,&apos;album&apos;:album_name}
+#返回这个字典
+</code></pre><h1 id="return-album"><a href="#return-album" class="headerlink" title="return album"></a>return album</h1><h1 id="接收返回值"><a href="#接收返回值" class="headerlink" title="#接收返回值"></a>#接收返回值</h1><h1 id="msg-wangfei-make-album-‘wangfei’-’tingyu’"><a href="#msg-wangfei-make-album-‘wangfei’-’tingyu’" class="headerlink" title="msg_wangfei = make_album(‘wangfei’,’tingyu’)"></a>msg_wangfei = make_album(‘wangfei’,’tingyu’)</h1><h1 id="msg-tianzhen-make-album-‘tianzhen’-’fengyucaihong’"><a href="#msg-tianzhen-make-album-‘tianzhen’-’fengyucaihong’" class="headerlink" title="msg_tianzhen = make_album(‘tianzhen’,’fengyucaihong’)"></a>msg_tianzhen = make_album(‘tianzhen’,’fengyucaihong’)</h1><h1 id="msg-yangyuying-make-album-‘yangyuying’-’tianmimi’"><a href="#msg-yangyuying-make-album-‘yangyuying’-’tianmimi’" class="headerlink" title="msg_yangyuying = make_album(‘yangyuying’,’tianmimi’)"></a>msg_yangyuying = make_album(‘yangyuying’,’tianmimi’)</h1><p>#利用三个音乐歌手调用函数</p>
+<h1 id="print-msg-wangfei"><a href="#print-msg-wangfei" class="headerlink" title="print(msg_wangfei)"></a>print(msg_wangfei)</h1><h1 id="print-msg-tianzhen"><a href="#print-msg-tianzhen" class="headerlink" title="print(msg_tianzhen)"></a>print(msg_tianzhen)</h1><h1 id="print-msg-yangyuying"><a href="#print-msg-yangyuying" class="headerlink" title="print(msg_yangyuying)"></a>print(msg_yangyuying)</h1><p>#定义一个函数</p>
+<h1 id="def-make-album-singer-name-album-name-songs-’’"><a href="#def-make-album-singer-name-album-name-songs-’’" class="headerlink" title="def make_album(singer_name,album_name,songs=’’):"></a>def make_album(singer_name,album_name,songs=’’):</h1><p>#描述的音乐的字典</p>
+<pre><code># album ={&apos;singer&apos;:singer_name,&apos;album&apos;:album_name}
+# if songs:
+#     album[&apos;songs&apos;]= songs
+#     return album
+</code></pre><p>#传递参数</p>
+<h1 id="msg-make-album-‘wangfei’-’haoting’"><a href="#msg-make-album-‘wangfei’-’haoting’" class="headerlink" title="msg = make_album(‘wangfei’,’haoting’)"></a>msg = make_album(‘wangfei’,’haoting’)</h1><h1 id="msg-song-make-album-‘fancunjun’-’nuli’-23"><a href="#msg-song-make-album-‘fancunjun’-’nuli’-23" class="headerlink" title="msg_song = make_album(‘fancunjun’,’nuli’,23)"></a>msg_song = make_album(‘fancunjun’,’nuli’,23)</h1><p>#打印字典</p>
+<h1 id="print-msg-song"><a href="#print-msg-song" class="headerlink" title="print(msg_song)"></a>print(msg_song)</h1><p>#定义一个函数<br>def make_album(singer_name,album_name):</p>
+<p>#描述的音乐的字典<br>    album ={‘singer’:singer_name,’album’:album_name}<br>    return album</p>
+<p>#提示用户输入歌手名和专辑名<br>while True:<br>    print(‘\nenter you like start name’)</p>
+<p>#输入用户名时输入q,退出程度<br>    star_name = input(‘\nenter you name:’)<br>    if star_name == ‘q’:<br>        break</p>
+<p>#输入专辑名时输入q,退出程度<br>    star_album = input(‘\nentre album album:’)<br>    if star_album == ‘q’:<br>        break</p>
+<p>#创建变量接收输入值<br>    msg = make_album(star_name,star_album)</p>
+<p>#调用函数打印字典<br>    print(msg)    </p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/27/学习笔记之字典III/" rel="next" title="学习笔记之字典III">
+                <i class="fa fa-chevron-left"></i> 学习笔记之字典III
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/30/学习笔记之类的学习与使用/" rel="prev" title="学习笔记之类的创建与使用">
+                学习笔记之类的创建与使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">望穿秋水</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/fancunjun" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#def-descrede-city-city-name-city-country-‘china’"><span class="nav-number">1.</span> <span class="nav-text">def descrede_city(city_name,city_country = ‘china’):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-city-name-‘is-in’-city-country"><span class="nav-number">2.</span> <span class="nav-text">print(city_name + ‘is in’ + city_country)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#descrede-city-‘qingdao’"><span class="nav-number">3.</span> <span class="nav-text">descrede_city(‘qingdao’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#descrede-city-‘shanghai’"><span class="nav-number">4.</span> <span class="nav-text">descrede_city(‘shanghai’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#descrede-city-‘huaehngdun’-city-country-’usa’"><span class="nav-number">5.</span> <span class="nav-text">descrede_city(‘huaehngdun’,city_country=’usa’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#def-get-formatted-name-first-name-last-name"><span class="nav-number">6.</span> <span class="nav-text">def get_formatted_name(first_name,last_name):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#‘’’返回整洁的名字’’’"><span class="nav-number">7.</span> <span class="nav-text">‘’’返回整洁的名字’’’</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#full-name-first-name-last-name"><span class="nav-number">8.</span> <span class="nav-text">full_name = first_name + last_name</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#return-full-name-title"><span class="nav-number">9.</span> <span class="nav-text">return full_name.title()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#musucian-get-formatted-name-‘fan’-’cunjun’"><span class="nav-number">10.</span> <span class="nav-text">musucian = get_formatted_name(‘fan’,’cunjun’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-musucian"><span class="nav-number">11.</span> <span class="nav-text">print(musucian)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#full-name-first-name-middle-name-last-name"><span class="nav-number">12.</span> <span class="nav-text">full_name = first_name + middle_name + last_name</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#return-full-name-title-1"><span class="nav-number">13.</span> <span class="nav-text">return full_name.title()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#def-get-formatted-name-first-name-last-name-middle-name-’’"><span class="nav-number">14.</span> <span class="nav-text">def get_formatted_name(first_name,last_name,middle_name=’’):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#musucian-full-get-formatted-name-‘fan’-’cun’-’jun’"><span class="nav-number">15.</span> <span class="nav-text">musucian_full = get_formatted_name(‘fan’,’cun’,’jun’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#musucian-nomiddle-get-formatted-name-‘fan’-’jun’"><span class="nav-number">16.</span> <span class="nav-text">musucian_nomiddle = get_formatted_name(‘fan’,’jun’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-musucian-full"><span class="nav-number">17.</span> <span class="nav-text">print(musucian_full)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-musucian-nomiddle"><span class="nav-number">18.</span> <span class="nav-text">print(musucian_nomiddle)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义一个人的函数包括名和姓"><span class="nav-number">19.</span> <span class="nav-text">#定义一个人的函数包括名和姓</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#def-build-person-first-name-last-name"><span class="nav-number">20.</span> <span class="nav-text">def build_person(first_name, last_name):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#return-person"><span class="nav-number">21.</span> <span class="nav-text">return person</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#musucian-build-person-‘liu’-’yifei’"><span class="nav-number">22.</span> <span class="nav-text">musucian = build_person(‘liu’,’yifei’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-musucian-1"><span class="nav-number">23.</span> <span class="nav-text">print(musucian)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#def-build-person-first-name-last-name-age-’’"><span class="nav-number">24.</span> <span class="nav-text">def build_person(first_name, last_name,age =’’):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#musucian-build-person-‘yang’-’lan’-age-27"><span class="nav-number">25.</span> <span class="nav-text">musucian = build_person(‘yang’,’lan’,age =27)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-musucian-2"><span class="nav-number">26.</span> <span class="nav-text">print(musucian)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#def-build-person-first-name-last-name-1"><span class="nav-number">27.</span> <span class="nav-text">def build_person(first_name, last_name):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#while-True"><span class="nav-number">28.</span> <span class="nav-text">while True:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接收last-name名字"><span class="nav-number">29.</span> <span class="nav-text">接收last_name名字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-‘hellow-‘-musucian-‘-’"><span class="nav-number">30.</span> <span class="nav-text">print(‘hellow ‘ + musucian + ‘!’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-‘exit’"><span class="nav-number">31.</span> <span class="nav-text">print(‘exit’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#def-city-countrys-city-name-city-country"><span class="nav-number">32.</span> <span class="nav-text">def city_countrys(city_name, city_country):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-‘“‘-city-name-‘-’-city-country-‘“‘"><span class="nav-number">33.</span> <span class="nav-text">print(‘“‘ + city_name + ‘,’+ city_country + ‘“‘)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-‘“-s-s”‘-city-name-city-country"><span class="nav-number">34.</span> <span class="nav-text">print(‘“%s,%s”‘ %(city_name,city_country))</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#city-countrys-‘qingdao’-’china’"><span class="nav-number">35.</span> <span class="nav-text">city_countrys(‘qingdao’,’china’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#def-greet-users-names"><span class="nav-number">36.</span> <span class="nav-text">def greet_users(names):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#usernames-‘liuyifei’-’zhaowei’-’dongmingzhu’"><span class="nav-number">37.</span> <span class="nav-text">usernames = [‘liuyifei’,’zhaowei’,’dongmingzhu’]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#greet-users-usernames"><span class="nav-number">38.</span> <span class="nav-text">greet_users(usernames)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#def-print-models-unprinted-designs-completed-models"><span class="nav-number">39.</span> <span class="nav-text">def print_models(unprinted_designs,completed_models):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#def-show-completed-models-completed-models"><span class="nav-number">40.</span> <span class="nav-text">def show_completed_models(completed_models):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#for-completed-model-in-completed-models"><span class="nav-number">41.</span> <span class="nav-text">for completed_model in completed_models:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-completed-model"><span class="nav-number">42.</span> <span class="nav-text">print(completed_model)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unprinted-designs-‘liu’-’yyi’-’fei’"><span class="nav-number">43.</span> <span class="nav-text">unprinted_designs = [‘liu’,’yyi’,’fei’]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#completed-models"><span class="nav-number">44.</span> <span class="nav-text">completed_models= []</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-models-unprinted-designs-completed-models"><span class="nav-number">45.</span> <span class="nav-text">print_models (unprinted_designs,completed_models)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#show-completed-models-completed-models"><span class="nav-number">46.</span> <span class="nav-text">show_completed_models(completed_models)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#def-make-album-singer-name-album-name"><span class="nav-number">47.</span> <span class="nav-text">def make_album(singer_name,album_name):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#return-album"><span class="nav-number">48.</span> <span class="nav-text">return album</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接收返回值"><span class="nav-number">49.</span> <span class="nav-text">#接收返回值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#msg-wangfei-make-album-‘wangfei’-’tingyu’"><span class="nav-number">50.</span> <span class="nav-text">msg_wangfei = make_album(‘wangfei’,’tingyu’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#msg-tianzhen-make-album-‘tianzhen’-’fengyucaihong’"><span class="nav-number">51.</span> <span class="nav-text">msg_tianzhen = make_album(‘tianzhen’,’fengyucaihong’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#msg-yangyuying-make-album-‘yangyuying’-’tianmimi’"><span class="nav-number">52.</span> <span class="nav-text">msg_yangyuying = make_album(‘yangyuying’,’tianmimi’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-msg-wangfei"><span class="nav-number">53.</span> <span class="nav-text">print(msg_wangfei)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-msg-tianzhen"><span class="nav-number">54.</span> <span class="nav-text">print(msg_tianzhen)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-msg-yangyuying"><span class="nav-number">55.</span> <span class="nav-text">print(msg_yangyuying)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#def-make-album-singer-name-album-name-songs-’’"><span class="nav-number">56.</span> <span class="nav-text">def make_album(singer_name,album_name,songs=’’):</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#msg-make-album-‘wangfei’-’haoting’"><span class="nav-number">57.</span> <span class="nav-text">msg = make_album(‘wangfei’,’haoting’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#msg-song-make-album-‘fancunjun’-’nuli’-23"><span class="nav-number">58.</span> <span class="nav-text">msg_song = make_album(‘fancunjun’,’nuli’,23)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-msg-song"><span class="nav-number">59.</span> <span class="nav-text">print(msg_song)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">望穿秋水</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
