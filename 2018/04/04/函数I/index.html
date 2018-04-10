@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.0.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+<meta name="description" content="1.定义一个函数12def greet_user():    print(&apos;how are you !&apos;) 2.调用函数1greet_user() 3.向函数传递信息123def greet_user(name):    print(&apos;hellow&apos; + name + &apos;!&apos;)greet_user(&apos;wangyao&apos;) 4.输出学习内容123def display(subject):    pri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习之函数I">
+<meta property="og:url" content="http://yoursite.com/2018/04/04/函数I/index.html">
+<meta property="og:site_name" content="一个小白的python之路">
+<meta property="og:description" content="1.定义一个函数12def greet_user():    print(&apos;how are you !&apos;) 2.调用函数1greet_user() 3.向函数传递信息123def greet_user(name):    print(&apos;hellow&apos; + name + &apos;!&apos;)greet_user(&apos;wangyao&apos;) 4.输出学习内容123def display(subject):    pri">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/美女情感.jpg">
+<meta property="og:updated_time" content="2018-04-10T02:27:22.213Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习之函数I">
+<meta name="twitter:description" content="1.定义一个函数12def greet_user():    print(&apos;how are you !&apos;) 2.调用函数1greet_user() 3.向函数传递信息123def greet_user(name):    print(&apos;hellow&apos; + name + &apos;!&apos;)greet_user(&apos;wangyao&apos;) 4.输出学习内容123def display(subject):    pri">
+<meta name="twitter:image" content="http://yoursite.com/images/美女情感.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="一个小白的python之路" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/04/函数I/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>学习之函数I | 一个小白的python之路</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一个小白的python之路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">勤学如春起之苗，不见其增，日有所长；辍学如磨刀之石，不见其损，日有所亏。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/04/函数I/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="望穿秋水">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一个小白的python之路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学习之函数I</h1>
+        
+
+        <div class="post-meta">
+           
+          <span class="post-time">
+             
+
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-04T08:00:00+08:00">2018-04-04</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>1.定义一个函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def greet_user():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'how are you !'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>2.调用函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">greet_user()</span><br></pre></td></tr></table></figure></p>
+<p>3.向函数传递信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def greet_user(name):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'hellow'</span> + name + <span class="string">'!'</span>)</span><br><span class="line">greet_user(<span class="string">'wangyao'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>4.输出学习内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def display(subject):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'i am studay '</span> + subject + <span class="string">'!'</span>)</span><br><span class="line">display(<span class="string">'函数'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>5.最喜欢的一本书<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def favorite_book(title):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'one of my favorite book is'</span> + title  + <span class="string">'in wonderland!'</span> )</span><br><span class="line">favorite_book(<span class="string">'语文'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>6.传递参数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def descride_pets(animal_type,pet_name):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'\ni have a '</span>+ animal_type + <span class="string">'!'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'my'</span> + animal_type + <span class="string">'name is '</span> + pet_name)</span><br><span class="line">descride_pets(<span class="string">'cat'</span>,<span class="string">'mimi'</span>)</span><br><span class="line">descride_pets(<span class="string">'dog'</span>,<span class="string">'dahuang'</span>)</span><br><span class="line">descride_pets(animal_type =<span class="string">'tiger'</span>,pet_name=<span class="string">'wangzhongwang'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>7.制作T恤<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def make_shirt(size,logo):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'i have a '</span> + size + <span class="string">' 号T恤！'</span> + <span class="string">'logo is '</span> + logo)</span><br><span class="line">make_shirt(<span class="string">'L'</span>,<span class="string">'dog'</span>)</span><br><span class="line">make_shirt(size=<span class="string">'LL'</span>,logo=<span class="string">'cat'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>8.制作默认T恤<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def make_shirt(size=<span class="string">'大号'</span>,logo=<span class="string">'i love you'</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'i have a T 恤'</span> + <span class="string">'size is '</span> + size )</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'loge is '</span> + logo)</span><br><span class="line">make_shirt()</span><br><span class="line">make_shirt(<span class="string">'中号'</span>)</span><br><span class="line">make_shirt(logo=<span class="string">'i hit you'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>9.定义一个函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def descrede_city(city_name,city_country = <span class="string">'china'</span>):</span><br><span class="line">    <span class="built_in">print</span>(city_name + <span class="string">'is in'</span> + city_country)</span><br><span class="line">descrede_city(<span class="string">'qingdao'</span>)</span><br><span class="line">descrede_city(<span class="string">'shanghai'</span>)</span><br><span class="line">descrede_city(<span class="string">'huaehngdun'</span>,city_country=<span class="string">'usa'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>10.返回简单值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def get_formatted_name(first_name,last_name):</span><br><span class="line">    <span class="string">''</span><span class="string">'返回整洁的名字'</span><span class="string">''</span></span><br><span class="line">    full_name = first_name + last_name</span><br><span class="line">    <span class="built_in">return</span> full_name.title()</span><br><span class="line">musucian = get_formatted_name(<span class="string">'fan'</span>,<span class="string">'cunjun'</span>)</span><br><span class="line"><span class="built_in">print</span>(musucian)</span><br></pre></td></tr></table></figure></p>
+<p>11.创建一个函数形参包括 firstname,middle_name,last_name<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def get_formatted_name(first_name,middle_name,last_name):</span><br><span class="line"><span class="comment"># 创建全名变量接收名字</span></span><br><span class="line">  full_name = first_name + middle_name + last_name</span><br><span class="line"><span class="comment"># 返回全名</span></span><br><span class="line">  <span class="built_in">return</span> full_name.title()</span><br><span class="line"><span class="comment"># 创建一个变量接收返回的值</span></span><br><span class="line">musucian = get_formatted_name(<span class="string">'fan'</span>,<span class="string">'cun'</span>,<span class="string">'jun'</span>)</span><br><span class="line"><span class="comment"># 打印返回值</span></span><br><span class="line"><span class="built_in">print</span>(musucian)</span><br></pre></td></tr></table></figure></p>
+<p>12.创建一个函数形参包括 firstname,middle_name,last_name<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">def get_formatted_name(first_name,last_name,middle_name=<span class="string">''</span>):</span><br><span class="line"><span class="comment"># 判断是否有中间名</span></span><br><span class="line"><span class="keyword">if</span> middle_name:</span><br><span class="line"><span class="comment"># 有中间名就把中间名加上</span></span><br><span class="line">   full_name = first_name + middle_name + last_name</span><br><span class="line"><span class="comment"># 没有中间名就忽略中间名</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    full_name = first_name + last_name</span><br><span class="line"><span class="comment"># 返回值</span></span><br><span class="line"><span class="built_in">return</span>  full_name.title()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建变量接收返回值</span></span><br><span class="line">musucian_full = get_formatted_name(<span class="string">'fan'</span>,<span class="string">'cun'</span>,<span class="string">'jun'</span>)</span><br><span class="line">musucian_nomiddle = get_formatted_name(<span class="string">'fan'</span>,<span class="string">'jun'</span>)</span><br><span class="line"><span class="comment"># 打印返回值</span></span><br><span class="line"><span class="built_in">print</span>(musucian_full)</span><br><span class="line"><span class="built_in">print</span>(musucian_nomiddle)</span><br></pre></td></tr></table></figure></p>
+<p>13.定义一个人的函数包括名和姓<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def build_person(first_name, last_name):</span><br><span class="line"><span class="comment"># 将接收的值存在一个字典中</span></span><br><span class="line">person = &#123;<span class="string">'first'</span>:first_name,<span class="string">'last'</span>:last_name&#125;</span><br><span class="line"><span class="comment"># 返回这个字典</span></span><br><span class="line">    <span class="built_in">return</span> person</span><br><span class="line"><span class="comment"># 变量接收返回值</span></span><br><span class="line">musucian = build_person(<span class="string">'liu'</span>,<span class="string">'yifei'</span>)</span><br><span class="line"><span class="comment"># 打印返回值</span></span><br><span class="line"><span class="built_in">print</span>(musucian)</span><br></pre></td></tr></table></figure></p>
+<p>14.定义一个函数，包括名，姓，和默认年龄<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def build_person(first_name, last_name,age =<span class="string">''</span>):</span><br><span class="line"><span class="comment"># 返回字典，包括人的信息</span></span><br><span class="line">person = &#123;<span class="string">'first'</span>:<span class="string">'first_name'</span>,<span class="string">'last'</span>:<span class="string">'last_name'</span>&#125;</span><br><span class="line"><span class="comment"># 判断如果有年龄，就把年龄赋值给函数中的年龄参数</span></span><br><span class="line"><span class="keyword">if</span> age:</span><br><span class="line">    person[<span class="string">'age'</span>]= age</span><br><span class="line"><span class="comment"># 返回字典</span></span><br><span class="line"><span class="built_in">return</span> person</span><br><span class="line"><span class="comment"># 变量接收返回值</span></span><br><span class="line">musucian = build_person(<span class="string">'yang'</span>,<span class="string">'lan'</span>,age =27)</span><br><span class="line"><span class="comment"># 打印返回值</span></span><br><span class="line"><span class="built_in">print</span>(musucian)</span><br></pre></td></tr></table></figure></p>
+<p>15.定义一个函数，包括名和姓<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">def build_person(first_name, last_name):</span><br><span class="line"><span class="comment"># 接收名和姓</span></span><br><span class="line">full_name = first_name + last_name</span><br><span class="line"><span class="comment"># 返回接收的名字</span></span><br><span class="line"><span class="built_in">return</span> full_name</span><br><span class="line"><span class="comment"># 提示用户输入名字</span></span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'\nenter you name!'</span>)</span><br><span class="line"><span class="comment"># 提示用户输入q是退出</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'\nenter q exit!'</span>)</span><br><span class="line"><span class="comment"># 接收输入的first_name名字</span></span><br><span class="line">f_name = input(<span class="string">'First_name'</span>)</span><br><span class="line"><span class="comment"># 当first_name输入为q时，退出程序</span></span><br><span class="line"><span class="keyword">if</span> f_name == <span class="string">'q'</span>:</span><br><span class="line">    <span class="built_in">break</span></span><br><span class="line"><span class="comment"># 接收last_name名字</span></span><br><span class="line">l_name = input(<span class="string">'Lsat_name'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 当last_name输入为q时，退出程序</span></span><br><span class="line"><span class="keyword">if</span> l_name == <span class="string">'q'</span>:</span><br><span class="line">    <span class="built_in">break</span></span><br><span class="line"><span class="comment"># 接收返回值</span></span><br><span class="line">musucian = build_person(f_name,l_name)</span><br><span class="line"><span class="comment"># 打印返回值</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'hellow '</span> + musucian + <span class="string">'!'</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'exit'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>16.练习城市<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def city_countrys(city_name, city_country):</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'"'</span> + city_name + <span class="string">','</span>+ city_country + <span class="string">'"'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'"%s,%s"'</span> %(city_name,city_country))</span><br><span class="line"></span><br><span class="line">city_countrys(<span class="string">'qingdao'</span>,<span class="string">'china'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>17.传递列表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个函数，形参为users</span></span><br><span class="line">def greet_users(names):</span><br><span class="line"><span class="comment"># 遍历这个列表，向列表中的每个人发出问好</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names:</span><br><span class="line">    msg = <span class="string">'hellow'</span> + name.title() + <span class="string">'!'</span></span><br><span class="line">    <span class="built_in">print</span>(msg)</span><br><span class="line"><span class="comment"># 调用函数，传入实参</span></span><br><span class="line">usernames = [<span class="string">'liuyifei'</span>,<span class="string">'zhaowei'</span>,<span class="string">'dongmingzhu'</span>]</span><br><span class="line"><span class="comment"># 打印所有问候语</span></span><br><span class="line">greet_users(usernames)</span><br></pre></td></tr></table></figure></p>
+<p>18.在函数中修改列表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义一个函数包含需要打印的列表和接收 打印列表两个形参</span></span><br><span class="line">def print_models(unprinted_designs,completed_models):</span><br><span class="line"><span class="comment"># 模拟打印的过程，将需要打印的列表参数打印存储到接收列表中</span></span><br><span class="line"><span class="keyword">while</span> unprinted_designs:</span><br><span class="line">    current_design = unprinted_designs.pop()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'print models:'</span> + current_design)</span><br><span class="line"><span class="comment"># 添加内容到completed</span></span><br><span class="line">completed_models.append(current_design)</span><br><span class="line"><span class="comment"># 定义显示打印结果的参数，循环打印</span></span><br><span class="line">def show_completed_models(completed_models):</span><br><span class="line">    <span class="keyword">for</span> completed_model <span class="keyword">in</span> completed_models:</span><br><span class="line">        <span class="built_in">print</span>(completed_model)</span><br><span class="line"><span class="comment"># 创建列表和空列表</span></span><br><span class="line">unprinted_designs = [<span class="string">'liu'</span>,<span class="string">'yyi'</span>,<span class="string">'fei'</span>]</span><br><span class="line">completed_models= []</span><br><span class="line"><span class="comment"># 调用显示列表的函数</span></span><br><span class="line">print_models (unprinted_designs,completed_models)</span><br><span class="line">show_completed_models(completed_models)</span><br></pre></td></tr></table></figure></p>
+<p>19.定义一个makde_album的函数，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def make_album(singer_name,album_name):</span><br><span class="line"><span class="comment"># 描述的音乐的字典</span></span><br><span class="line">album =&#123;<span class="string">'singer'</span>:singer_name,<span class="string">'album'</span>:album_name&#125;</span><br><span class="line"><span class="comment"># 返回这个字典</span></span><br><span class="line">    <span class="built_in">return</span> album</span><br><span class="line"><span class="comment">#接收返回值</span></span><br><span class="line">msg_wangfei = make_album(<span class="string">'wangfei'</span>,<span class="string">'tingyu'</span>)</span><br><span class="line">msg_tianzhen = make_album(<span class="string">'tianzhen'</span>,<span class="string">'fengyucaihong'</span>)</span><br><span class="line">msg_yangyuying = make_album(<span class="string">'yangyuying'</span>,<span class="string">'tianmimi'</span>)</span><br><span class="line"><span class="comment"># 利用三个音乐歌手调用函数</span></span><br><span class="line"><span class="built_in">print</span>(msg_wangfei)</span><br><span class="line"><span class="built_in">print</span>(msg_tianzhen)</span><br><span class="line"><span class="built_in">print</span>(msg_yangyuying)</span><br></pre></td></tr></table></figure></p>
+<p>20.定义一个函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def make_album(singer_name,album_name,songs=<span class="string">''</span>):</span><br><span class="line">描述的音乐的字典</span><br><span class="line">album =&#123;<span class="string">'singer'</span>:singer_name,<span class="string">'album'</span>:album_name&#125;</span><br><span class="line"><span class="keyword">if</span> songs:</span><br><span class="line">    album[<span class="string">'songs'</span>]= songs</span><br><span class="line">    <span class="built_in">return</span> album</span><br><span class="line"><span class="comment"># 传递参数</span></span><br><span class="line">msg = make_album(<span class="string">'wangfei'</span>,<span class="string">'haoting'</span>)</span><br><span class="line">msg_song = make_album(<span class="string">'fancunjun'</span>,<span class="string">'nuli'</span>,23)</span><br><span class="line"><span class="comment"># 打印字典</span></span><br><span class="line"><span class="built_in">print</span>(msg_song)</span><br></pre></td></tr></table></figure></p>
+<p>21.定义一个函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">def make_album(singer_name, album_name):</span><br><span class="line">    <span class="comment"># 描述的音乐的字典</span></span><br><span class="line">    album = &#123;<span class="string">'singer'</span>: singer_name, <span class="string">'album'</span>: album_name&#125;</span><br><span class="line">    <span class="built_in">return</span> album</span><br><span class="line"><span class="comment"># 提示用户输入歌手名和专辑名</span></span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'\nenter you like start name'</span>)</span><br><span class="line">    <span class="comment"># 输入用户名时输入q,退出程度</span></span><br><span class="line">    star_name = input(<span class="string">'\nenter you name:'</span>)</span><br><span class="line">    <span class="keyword">if</span> star_name == <span class="string">'q'</span>:</span><br><span class="line">        <span class="built_in">break</span></span><br><span class="line">    <span class="comment"># 输入专辑名时输入q,退出程度</span></span><br><span class="line">    star_album = input(<span class="string">'\nentre album album:'</span>)</span><br><span class="line">    <span class="keyword">if</span> star_album == <span class="string">'q'</span>:</span><br><span class="line">        <span class="built_in">break</span></span><br><span class="line">    <span class="comment"># 创建变量接收输入值</span></span><br><span class="line">    msg = make_album(star_name, star_album)</span><br><span class="line">    <span class="comment"># 调用函数打印字典</span></span><br><span class="line">    <span class="built_in">print</span>(msg)</span><br></pre></td></tr></table></figure></p>
+<p>22.创建一个打印魔术师的函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def show_magicians(magicians):</span><br><span class="line">    <span class="keyword">for</span> magicians_name <span class="keyword">in</span> magicians:</span><br><span class="line">        msg = <span class="string">'hellow '</span>+ magicians_name + <span class="string">'!'</span></span><br><span class="line">        <span class="built_in">print</span>(msg)</span><br><span class="line">def make_great(magicians):</span><br><span class="line">    <span class="keyword">for</span> magicians <span class="keyword">in</span> magicians:</span><br><span class="line">        msg = magicians + <span class="string">'_the great'</span></span><br><span class="line">        <span class="built_in">print</span>(msg)</span><br><span class="line">magicicanses = [ <span class="string">'liuqian'</span>,<span class="string">'wanghu'</span>,<span class="string">'liuqianyu'</span>]</span><br><span class="line">show_magicians(magicicanses)</span><br><span class="line">make_great(magicicanses)</span><br></pre></td></tr></table></figure></p>
+<p>最后还是给大家来一波福利…….<br><img src="/images/美女情感.jpg" alt="&#39;美女情感&#39;"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/31/读书笔记之字典III/" rel="next" title="学习笔记之字典III">
+                <i class="fa fa-chevron-left"></i> 学习笔记之字典III
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/09/python常用模块/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">望穿秋水</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/fancunjun" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">望穿秋水</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
