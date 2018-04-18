@@ -112,7 +112,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/gitbash.png">
 <meta property="og:image" content="http://yoursite.com/images/git1.jpg">
-<meta property="og:updated_time" content="2018-04-13T07:56:18.469Z">
+<meta property="og:updated_time" content="2018-04-17T06:23:36.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="studay_git-I">
 <meta name="twitter:description" content="声明：以下学习笔记是根据廖雪峰老师的git教程，实际操作记录而来！！ 今天开始学了一下git的基础操作，简单介绍一下,Git是目前世界上最先进的分布式版本控制系统（没有之一）。首先我们要下载git,因为我目前是在windows下学习git,所以就按照windows下安装软件一样，一路确定就可以了。安装完成后，在开始开菜单中找到git-git bash,会弹出一个类似命令行的窗口，说明git安装成功">
@@ -332,7 +332,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T00:00:00Z">2018-04-13</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T08:00:00+08:00">2018-04-13</time>
             
 
             
@@ -373,7 +373,10 @@
 <p>今天开始学了一下git的基础操作，简单介绍一下,Git是目前世界上最先进的分布式版本控制系统（没有之一）。<br>首先我们要下载git,因为我目前是在windows下学习git,所以就按照windows下安装软件一样，一路确定就可以了。<br>安装完成后，在开始开菜单中找到git-git bash,会弹出一个类似命令行的窗口，说明git安装成功了。<br><img src="/images/gitbash.png" alt="&#39;gitbash&#39;"><br>1.通过命令把这个目录变成git可管理的仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">Reinitialized existing Git repository <span class="keyword">in</span> D:/git/jekll_demo/.git/</span><br></pre></td></tr></table></figure></p>
 <p>2.创建一个文件，并在里面填写内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch studay_git.txt</span><br></pre></td></tr></table></figure></p>
 <p>3.把文件提交到本地仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git add studay_git.txt</span><br><span class="line">$ git commit -m <span class="string">"this is studay git file!"</span></span><br><span class="line">[gh-pages e1a3fe3] this is studay git file!</span><br><span class="line"> 1 file changed, 2 insertions(+)</span><br><span class="line"> create mode 100644 studay_git.txt</span><br></pre></td></tr></table></figure></p>
-<p>这里说明一个-m的参数，加这个参数后面添加文件说明，有的人不加这个参数，为了以后自己查看文件或者其他人查看你的代码或者文件，这个说明是必须的。只要查看这个说明就能明白这个文件是干什么的？不用查看文件内容。<br>4.可以多次git add 文件，然后一次性git commit提交到本地仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add studay_git.txt</span><br><span class="line">$ git add studay2_git.txt</span><br><span class="line">$ git commit -m <span class="string">"this is studay git file!"</span></span><br></pre></td></tr></table></figure></p>
+<p>这里说明一个-m的参数，加这个参数后面添加文件说明，有的人不加这个参数，为了以后自己查看文件或者其他人查看你的代码或者文件，这个说明是必须的。只要查看这个说明就能明白这个文件是干什么的？不用查看文件内容。</p>
+<p>4.个性化个人信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"fancunjun"</span></span><br><span class="line">$ git config --global user.email <span class="string">"417592877@qq.com"</span></span><br></pre></td></tr></table></figure></p>
+<p>5.可以多次git add 文件，然后一次性git commit提交到本地仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add studay_git.txt</span><br><span class="line">$ git add studay2_git.txt</span><br><span class="line">$ git commit -m <span class="string">"this is studay git file!"</span></span><br></pre></td></tr></table></figure></p>
+<p>6.把本地库的内容推送到GitHub<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git push -u origin master</span><br><span class="line">Counting objects: 3, <span class="keyword">done</span>.</span><br><span class="line">Delta compression using up to 3 threads.</span><br><span class="line">Compressing objects: 100% (2/2), <span class="keyword">done</span>.</span><br><span class="line">Writing objects: 100% (3/3), 261 bytes | 261.00 KiB/s, <span class="keyword">done</span>.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To https://github.com/fancunjun/learngit.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br><span class="line">Branch <span class="string">'master'</span> <span class="built_in">set</span> up to track remote branch <span class="string">'master'</span> from <span class="string">'origin'</span></span><br></pre></td></tr></table></figure></p>
 <p>未完待续……</p>
 <p><img src="/images/git1.jpg" alt="&#39;git1&#39;"></p>
 
@@ -403,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/12/学习笔记字典III/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2018/04/05/函数II/" rel="next" title="学习之函数II">
+                <i class="fa fa-chevron-left"></i> 学习之函数II
               </a>
             
           </div>
@@ -412,6 +415,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/18/windows系统安装mongoDB/" rel="prev" title="windows系统安装mongoDB">
+                windows系统安装mongoDB <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -476,7 +483,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
